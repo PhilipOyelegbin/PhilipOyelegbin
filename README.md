@@ -1,4 +1,7 @@
 ### Hi there 👋
+- 🌱 I’m currently learning JavaScript
+- 📫 How to reach me: philipoyelegbin@gmail.com
+- 👯 I’m looking to collaborate on any web development project as a frontend developer
 
 <!--
 **PhilipOyelegbin/PhilipOyelegbin** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -14,3 +17,6 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=philipoyelegbin&show_icons=true&theme=cobalt)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
