@@ -11,7 +11,8 @@ He is focused on providing website development solutions like:
 * Domain registration
 * Website hosting, and more
 
-- 🌱 I’m currently learning React.js
+- 🔭 I’m currently working on nigeria remote voting sysytem
+- 🌱 I’m currently learning Cloud Computing
 - 📫 How to reach me: philipoyelegbin@gmail.com
 - 👯 I’m looking to collaborate on any web development project as a React developer
 
