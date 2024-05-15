@@ -4,7 +4,7 @@ Fullstack Developer Philip Kehinde Oyelegbin, better known by his stage as Phili
 Philip is a huge fan of artificial intelligence and is incredibly enthusiastic about the tech industry. He is constantly eager to collaborate with other developers and form connections with other brilliant minds.
 
 ## Tech Stack
-[![My Skills](https://skillicons.dev/icons?i=html,css,sass,tailwind,js,react,redux,nodejs,express,nextjs,prisma,mysql,mongodb,git,github,bash,linux,debian,vim,gcp,ansible,terraform,nginx,docker,kubernetes,&perline=4)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=html,css,sass,tailwind,js,react,redux,nodejs,express,nextjs,prisma,mysql,mongodb,git,github,bash,linux,debian,vim,gcp,ansible,terraform,nginx,docker,kubernetes,&perline=5)](https://skillicons.dev)
 
 - 🔭 I’m currently working on nigeria remote voting sysytem
 - 🌱 I’m currently learning Cloud Engineering
