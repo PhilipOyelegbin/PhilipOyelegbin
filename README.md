@@ -3,16 +3,11 @@ Fullstack Developer Philip Kehinde Oyelegbin, better known by his stage as Phili
 
 Philip is a huge fan of artificial intelligence and is incredibly enthusiastic about the tech industry. He is constantly eager to collaborate with other developers and form connections with other brilliant minds.
 
-He is focused on providing website development solutions like:
-* Landing page
-* School portal
-* Hospital/School management system
-* E-commerce website
-* Domain registration
-* Website hosting, and more
+## Tech Stack
+[![My Skills](https://skillicons.dev/icons?i=html,css,js,react,node,next,prisma,mysql,mongodb,vim,gcp,ansible,terraform,nginx,&perline=4)](https://skillicons.dev)
 
 - 🔭 I’m currently working on nigeria remote voting sysytem
-- 🌱 I’m currently learning Cloud Computing
+- 🌱 I’m currently learning Cloud Engineering
 - 📫 How to reach me: philipoyelegbin@gmail.com
 - 👯 I’m looking to collaborate on any web development project either as a frontend or backend developer
 
