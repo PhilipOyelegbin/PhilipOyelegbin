@@ -4,7 +4,7 @@ Fullstack Developer Philip Kehinde Oyelegbin, better known by his stage as Phili
 Philip is a huge fan of artificial intelligence and is incredibly enthusiastic about the tech industry. He is constantly eager to collaborate with other developers and form connections with other brilliant minds.
 
 ## Tech Stack
-[![My Skills](https://skillicons.dev/icons?i=html,css,js,react,node,next,prisma,mysql,mongodb,vim,gcp,ansible,terraform,nginx,&perline=4)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=html,css,sass,tailwind,js,react,redux,nodejs,express,nextjs,prisma,mysql,mongodb,git,github,bash,linux,debian,vim,gcp,ansible,terraform,nginx,docker,kubernetes,&perline=4)](https://skillicons.dev)
 
 - 🔭 I’m currently working on nigeria remote voting sysytem
 - 🌱 I’m currently learning Cloud Engineering
@@ -26,5 +26,5 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=philipoyelegbin&show_icons=true&theme=cobalt)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+![Philip's GitHub stats](https://github-readme-stats.vercel.app/api?username=philipoyelegbin&show_icons=true&theme=cobalt)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact)](https://github.com/philipoyelegbin/github-readme-stats)
