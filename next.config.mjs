@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
   reactStrictMode: true,
   images: {
     dangerouslyAllowSVG: true,
-    allowFutureImage: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     domains: [
       "img.freepik.com",
