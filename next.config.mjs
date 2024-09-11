@@ -1,12 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    images: {
-      allowFutureImage: true,
-    },
-  },
   reactStrictMode: true,
   images: {
+    type: ["image/svg+xml"],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     domains: [
