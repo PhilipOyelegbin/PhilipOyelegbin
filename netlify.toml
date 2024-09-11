@@ -1,4 +1,2 @@
-[headers]
-for = "/.svg"
 [headers.values]
-Content-Type = "image/svg+xml"
+  "/.svg" = "image/svg+xml"
