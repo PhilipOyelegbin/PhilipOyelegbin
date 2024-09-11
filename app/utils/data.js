@@ -19,7 +19,7 @@ export const EducationData = [
 export const SkillsData = {
   FrontendSkills: [
     { cover_image: "/html.svg", label: "HTML" },
-    { cover_image: "https://skillicons.dev/icons?i=html", label: "CSS" },
+    { cover_image: "/css.svg", label: "CSS" },
     { cover_image: "/sass.svg", label: "Sass" },
     {
       cover_image: "/bootstrap.svg",

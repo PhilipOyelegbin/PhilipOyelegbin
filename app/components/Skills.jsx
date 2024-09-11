@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { SkillsData } from "../utils/data";
 
 const Skills = () => {
@@ -13,7 +12,7 @@ const Skills = () => {
                 className='flex items-center gap-3 py-1 px-3 rounded-xl border border-gray-100 hover:shadow-md hover:shadow-gray-500'
                 key={index}
               >
-                <Image
+                <img
                   src={skill.cover_image || ""}
                   loading='lazy'
                   width={50}
@@ -41,7 +40,7 @@ const Skills = () => {
                 className='flex items-center gap-3 py-1 px-3 rounded-xl border border-gray-100 hover:shadow-md hover:shadow-gray-500'
                 key={index}
               >
-                <Image
+                <img
                   src={skill.cover_image || ""}
                   width={50}
                   height={50}
@@ -69,7 +68,7 @@ const Skills = () => {
                 className='flex items-center gap-3 py-1 px-3 rounded-xl border border-gray-100 hover:shadow-md hover:shadow-gray-500'
                 key={index}
               >
-                <Image
+                <img
                   src={skill.cover_image || ""}
                   width={50}
                   height={50}
@@ -97,7 +96,7 @@ const Skills = () => {
                 className='flex items-center gap-3 py-1 px-3 rounded-xl border border-gray-100 hover:shadow-md hover:shadow-gray-500'
                 key={index}
               >
-                <Image
+                <img
                   src={skill.cover_image || ""}
                   width={50}
                   height={50}
