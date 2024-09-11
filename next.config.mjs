@@ -5,7 +5,7 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    formats: ["image/avif", "image/webp", "image/svg"],
+    formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 3600,
     remotePatterns: [
       {
