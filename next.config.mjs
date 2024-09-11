@@ -10,6 +10,7 @@ const nextConfig = {
       "encrypted-tbn0.gstatic.com",
       "raw.githubusercontent.com",
       "skillicons.dev",
+      "philipoyelegbin.com.ng",
     ],
   },
   env: {
