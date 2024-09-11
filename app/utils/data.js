@@ -18,82 +18,82 @@ export const EducationData = [
 
 export const SkillsData = {
   FrontendSkills: [
-    { cover_image: "https://skillicons.dev/icons?i=html", label: "HTML" },
-    { cover_image: "https://skillicons.dev/icons?i=css", label: "CSS" },
-    { cover_image: "https://skillicons.dev/icons?i=sass", label: "Sass" },
+    { cover_image: "/html.svg", label: "HTML" },
+    { cover_image: "/css.svg", label: "CSS" },
+    { cover_image: "/sass.svg", label: "Sass" },
     {
-      cover_image: "https://skillicons.dev/icons?i=bootstrap",
+      cover_image: "/bootstrap.svg",
       label: "Bootsrap",
     },
     {
-      cover_image: "https://skillicons.dev/icons?i=tailwind",
+      cover_image: "/tailwind.svg",
       label: "Tailwind",
     },
     {
-      cover_image: "https://skillicons.dev/icons?i=javascript",
+      cover_image: "/javascript.svg",
       label: "JavaScript",
     },
-    { cover_image: "https://skillicons.dev/icons?i=react", label: "React" },
-    { cover_image: "https://skillicons.dev/icons?i=next", label: "Next" },
-    { cover_image: "https://skillicons.dev/icons?i=redux", label: "Redux" },
+    { cover_image: "/react.svg", label: "React" },
+    { cover_image: "/next.svg", label: "Next" },
+    { cover_image: "/redux.svg", label: "Redux" },
   ],
   BackendSkills: [
     {
-      cover_image: "https://skillicons.dev/icons?i=nodejs",
+      cover_image: "/nodejs.svg",
       label: "Nodejs",
     },
     {
-      cover_image: "https://skillicons.dev/icons?i=express",
+      cover_image: "/express.svg",
       label: "Express",
     },
     {
-      cover_image: "https://skillicons.dev/icons?i=mongodb",
+      cover_image: "/mongodb.svg",
       label: "MongoDB",
     },
-    { cover_image: "https://skillicons.dev/icons?i=mysql", label: "MySQL" },
+    { cover_image: "/mysql.svg", label: "MySQL" },
     {
-      cover_image: "https://skillicons.dev/icons?i=postgresql",
+      cover_image: "/postgresql.svg",
       label: "PostgreSQL",
     },
   ],
   CloudSkills: [
-    { cover_image: "https://skillicons.dev/icons?i=gcp", label: "GCP" },
-    { cover_image: "https://skillicons.dev/icons?i=nginx", label: "Nginx" },
+    { cover_image: "/gcp.svg", label: "GCP" },
+    { cover_image: "/nginx.svg", label: "Nginx" },
     {
-      cover_image: "https://skillicons.dev/icons?i=ansible",
+      cover_image: "/ansible.svg",
       label: "Ansible",
     },
     {
-      cover_image: "https://skillicons.dev/icons?i=terraform",
+      cover_image: "/terraform.svg",
       label: "Terraform",
     },
     {
-      cover_image: "https://skillicons.dev/icons?i=docker",
+      cover_image: "/docker.svg",
       label: "Docker",
     },
     {
-      cover_image: "https://skillicons.dev/icons?i=kubernetes",
+      cover_image: "/kubernetes.svg",
       label: "Kubernetes",
     },
   ],
   OtherSkills: [
-    { cover_image: "https://skillicons.dev/icons?i=figma", label: "Figma" },
+    { cover_image: "/figma.svg", label: "Figma" },
     {
-      cover_image: "https://skillicons.dev/icons?i=vscode",
+      cover_image: "/vscode.svg",
       label: "VS Code",
     },
-    { cover_image: "https://skillicons.dev/icons?i=git", label: "Git" },
+    { cover_image: "/git.svg", label: "Git" },
     {
-      cover_image: "https://skillicons.dev/icons?i=github",
+      cover_image: "/github.svg",
       label: "GitHub",
     },
-    { cover_image: "https://skillicons.dev/icons?i=vim", label: "Vim" },
+    { cover_image: "/vim.svg", label: "Vim" },
     {
-      cover_image: "https://skillicons.dev/icons?i=netlify",
+      cover_image: "/netlify.svg",
       label: "Netlify",
     },
     {
-      cover_image: "https://skillicons.dev/icons?i=vercel",
+      cover_image: "/vercel.svg",
       label: "Vercel",
     },
   ],
@@ -125,21 +125,21 @@ export const ExperienceData = [
 export const Services = [
   {
     id: 1,
-    icon: "binoculars.svg",
+    icon: "/binoculars.svg",
     title: "Vision",
     summary:
       "You need a beautiful and functional website that will inspire and connect with their visitors, aiming to convert website visitors into clients.",
   },
   {
     id: 2,
-    icon: "pencil.svg",
+    icon: "/pencil.svg",
     title: "Plan",
     summary:
       "Actualizing your vision requires a strategic plan. This is where we analyze your target market and tailor the look of your site to your vision and your ideal client's needs using Figma.",
   },
   {
     id: 3,
-    icon: "columns.svg",
+    icon: "/columns.svg",
     title: "Build",
     summary:
       "This is where I implement the plan to make your vision come alive on the web page. With the language of computers, I build the structure, give it an attractive look, make it interactive and host it on the web.",
