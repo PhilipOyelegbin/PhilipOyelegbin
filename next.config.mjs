@@ -2,16 +2,47 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    type: ["image/svg+xml"],
     dangerouslyAllowSVG: true,
+    formats: ["image/svg+xml"],
+    minimumCacheTTL: 3600,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    domains: [
-      "img.freepik.com",
-      "res.cloudinary.com",
-      "encrypted-tbn0.gstatic.com",
-      "raw.githubusercontent.com",
-      "skillicons.dev",
-      "philipoyelegbin.com.ng",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.freepik.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "skillicons.dev",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "philipoyelegbin.com.ng",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   env: {
