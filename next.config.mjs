@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     dangerouslyAllowSVG: true,
-    formats: ["image/svg+xml"],
+    formats: ["image/svg" | "image/avif" | "image/webp"],
     minimumCacheTTL: 3600,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
