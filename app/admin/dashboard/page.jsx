@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 const Dashboard = async () => {
   const session = await getServerSession();
   if (!session) {
-    redirect("/login");
+    redirect("/admin/login");
   }
   return (
     <article>

@@ -111,8 +111,7 @@ export const Testimonials = () => {
                 testimonials?.map((testimony) => (
                   <div
                     className='flex flex-col items-center bg-slate-700 bg-opacity-30 rounded-md p-5 h-72 md:h-60 overflow-y-scroll'
-                    key={testimony.email}
-                  >
+                    key={testimony.email}>
                     <h3 className='text-2xl text-center mb-2'>
                       {testimony.full_name}
                     </h3>
@@ -122,8 +121,7 @@ export const Testimonials = () => {
                     </p>
                     <div className='flex gap-5 items-center text-2xl mx-auto w-fit mt-3'>
                       <Link
-                        href={`/login/dashboard/update/feedback/${testimony._id}`}
-                      >
+                        href={`/admin/dashboard/update/feedback/${testimony._id}`}>
                         <FaPenAlt className='text-blue-500' />
                       </Link>
                       <FaTrash

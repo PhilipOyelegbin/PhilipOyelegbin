@@ -39,7 +39,7 @@ const Login = () => {
       if (res?.error) {
         toast.error("Invalid details!");
       } else if (res?.url) {
-        route.replace("/login/dashboard");
+        route.replace("/dashboard");
       }
     } catch (error) {
       console.error("Error during sign-in:", error);
@@ -49,7 +49,7 @@ const Login = () => {
 
   useEffect(() => {
     if (session?.status === "authenticated") {
-      route.replace("/login/dashboard");
+      route.replace("/admin/dashboard");
     }
   }, [session, route]);
 
@@ -58,8 +58,7 @@ const Login = () => {
       <form
         onSubmit={handleSend}
         autoComplete='false'
-        className='md:w-2/3 xl:w-2/5 bg-slate-200 rounded-2xl text-slate-700 p-5'
-      >
+        className='md:w-2/3 xl:w-2/5 bg-slate-200 rounded-2xl text-slate-700 p-5'>
         <h3>Login to the dashboard</h3>
         <div className='form-control'>
           <label htmlFor='email'>Email:</label>
@@ -100,8 +99,7 @@ const Login = () => {
           <button
             type='submit'
             disabled={disabledState}
-            className='bg-purple-700 text-slate-200 px-4 py-2 rounded-lg ease-linear duration-300 disabled:bg-gray-300 '
-          >
+            className='bg-purple-700 text-slate-200 px-4 py-2 rounded-lg ease-linear duration-300 disabled:bg-gray-300 '>
             Sign In
           </button>
           <a href='/' className='text-2xl block'>

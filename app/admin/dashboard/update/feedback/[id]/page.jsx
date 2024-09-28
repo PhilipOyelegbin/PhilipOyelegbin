@@ -35,7 +35,7 @@ const FeedbackDetail = ({ params }) => {
           rating: "",
           approved: "",
         });
-        navigate.push("/");
+        navigate.replace("/");
       })
       .catch((error) => {
         error.message && toast.error("An error occured!");
@@ -110,8 +110,7 @@ const FeedbackDetail = ({ params }) => {
             maxLength='150'
             placeholder='Write your message here...'
             required
-            readOnly
-          ></textarea>
+            readOnly></textarea>
         </div>
 
         <button type='submit' className='btn'>
@@ -135,7 +134,7 @@ const FeedbackDetail = ({ params }) => {
         />
         <h2>Administrator</h2>
         <h4>Your are signed in as an admin now.</h4>
-        <Link href='/login/dashboard' className='btn'>
+        <Link href='/admin/dashboard' className='btn'>
           Go to Dashboard
         </Link>
       </aside>

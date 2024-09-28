@@ -97,9 +97,8 @@ const Projects = () => {
       <div className='flex flex-wrap justify-between'>
         <h2 className='text-center'>Projects</h2>
         <Link
-          href='/login/dashboard/update/project'
-          className='text-2xl text-lime-500'
-        >
+          href='/admin/dashboard/update/project'
+          className='text-2xl text-lime-500'>
           <FaPlusCircle />
         </Link>
       </div>
@@ -120,8 +119,7 @@ const Projects = () => {
                   return (
                     <figure
                       className='card bg-slate-700 bg-opacity-30 hover:shadow-md hover:shadow-slate-700 h-[490px]'
-                      key={project._id}
-                    >
+                      key={project._id}>
                       <Image
                         src={project.cover_image || "Unavailable"}
                         className='w-full rounded-t-lg h-56'
@@ -138,8 +136,7 @@ const Projects = () => {
                         </p>
                         <div className='flex gap-5 justify-center items-center text-2xl mt-3'>
                           <Link
-                            href={`/login/dashboard/update/project/${project._id}`}
-                          >
+                            href={`/admin/dashboard/update/project/${project._id}`}>
                             <FaPenAlt className='text-blue-500' />
                           </Link>
                           <FaTrash

@@ -16,9 +16,8 @@ const Navbar = () => {
       {/* logo */}
       <div className='flex justify-between items-center'>
         <Link
-          href='/login/dashboard'
-          className='logo text-xl md:text-2xl font-bold text-slate-200'
-        >
+          href='/admin/login'
+          className='logo text-xl md:text-2xl font-bold text-slate-200'>
           {"(Philip Oyelegbin) =>"}
         </Link>
       </div>
@@ -26,8 +25,7 @@ const Navbar = () => {
       {/* menu button */}
       <button
         className='text-4xl cursor-pointer lg:hidden block'
-        onClick={handleMenuContent}
-      >
+        onClick={handleMenuContent}>
         <HiOutlineMenuAlt3 className={`h-6 w-6 ${open ? "hidden" : "block"}`} />
       </button>
 
@@ -38,8 +36,7 @@ const Navbar = () => {
             <Link
               href='#about'
               className='menuLink'
-              onClick={handleMenuContent}
-            >
+              onClick={handleMenuContent}>
               About
             </Link>
           </li>
@@ -47,8 +44,7 @@ const Navbar = () => {
             <Link
               href='#qualifications'
               className='menuLink'
-              onClick={handleMenuContent}
-            >
+              onClick={handleMenuContent}>
               Qualifications
             </Link>
           </li>
@@ -56,8 +52,7 @@ const Navbar = () => {
             <Link
               href='#projects'
               className='menuLink'
-              onClick={handleMenuContent}
-            >
+              onClick={handleMenuContent}>
               Projects
             </Link>
           </li>
@@ -65,8 +60,7 @@ const Navbar = () => {
             <Link
               href='#feedback'
               className='menuLink'
-              onClick={handleMenuContent}
-            >
+              onClick={handleMenuContent}>
               Feedback
             </Link>
           </li>
