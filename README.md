@@ -1,7 +1,9 @@
 ### Hi there 👋
 Fullstack Developer Philip Kehinde Oyelegbin, better known by his stage as Philip Oyelegbin, is based in Lagos, Nigeria. He is currently employed as a Customer Support Officer at GO54 (formerly WhoGoHost Limited), he was also a volunteer for See9ja and was a Robotics Instructor at WiFi Combat Academy, where he instructs kids and teenagers in a variety of technical subjects. Philip has a solid history in HVAC System Maintenance and a strong maintenance culture. He graduated from Yaba College of Technology with a degree in Industrial Maintenance Engineering.
 
-Philip is a huge fan of artificial intelligence and is incredibly enthusiastic about the tech industry. He is constantly eager to collaborate with other developers and form connections with other brilliant minds.
+Here's a professional summary highlighting the personality traits:
+
+Goal-oriented problem solver with a visionary approach. Collaborative leader driven by innovation and excellence. Passionate about strategic solutions, team synergy, and achieving exceptional results.
 
 ## Tech Stack
 [![My Skills](https://skillicons.dev/icons?i=html,css,sass,tailwind,js,react,redux,nodejs,express,nextjs,prisma,mysql,mongodb,git,github,bash,linux,debian,vim,gcp,ansible,terraform,nginx,docker,kubernetes,&perline=5)](https://skillicons.dev)
