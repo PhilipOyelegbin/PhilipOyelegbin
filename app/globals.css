@@ -42,13 +42,13 @@
   .menuLink {@apply text-lg ml-2 ease-linear duration-300 hover:text-slate-400 md:ml-0;}
 
   .about-section {
-    @apply px-5 py-10 flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center gap-3 lg:px-20 pt-20 lg:h-svh;
+    @apply px-5 py-10 flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center gap-3 lg:px-20 pt-20 lg:h-screen;
   }
 
-  .profile-image {
+  /* .profile-image {
     @apply mx-auto lg:w-full lg:h-full border-[4px] border-solid border-purple-700;
     border-radius: 80% 30%/30% 80%;
-  }
+  } */
 
   .social-icon {@apply text-purple-950 w-6 h-6}
 

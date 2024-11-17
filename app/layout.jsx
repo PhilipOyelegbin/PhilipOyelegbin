@@ -12,13 +12,13 @@ export const metadata = {
   metadataBase: new URL(process.env.HOST_URI),
   title: "Philip Oyelegbin - Web and Cloud Engineer",
   description:
-    "Result-Driven Support Specialist | Frontend Developer | Cloud Engineer | Passionate Innovator | STEM Advocate",
+    "Experienced Support Specialist | Backend Developer | Cloud & Data Engineer",
   favicon: "./favicon.ico",
   type: "website",
   openGraph: {
-    title: "Philip Oyelegbin - Web and Cloud Engineer",
+    title: "Philip Oyelegbin - Backend and Cloud Engineer",
     description:
-      "Result-Driven Support Specialist | Frontend Developer | Cloud Engineer | Passionate Innovator | STEM Advocate",
+      "Experienced Support Specialist | Backend Developer | Cloud & Data Engineer",
     url: process.env.HOST_URI,
     type: "website",
     locale: "en_US",
