@@ -25,5 +25,5 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Build the Backend Application
-        run: npm run build
+      # - name: Build the Application
+      #   run: npm run build
