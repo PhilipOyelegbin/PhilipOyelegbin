@@ -46,7 +46,7 @@ const Feedback = () => {
   };
 
   return (
-    <section className='px-5 py-10 lg:px-20' id='feedback'>
+    <section className='my-12 px-5 py-10 lg:px-20' id='feedback'>
       <div className={`feedback-bg`}>
         {/* container holding the contact form */}
         <div className='lg:w-2/5 w-full bg-purple-950 bg-opacity-80 rounded-2xl text-white p-5'>
@@ -122,8 +122,7 @@ const Feedback = () => {
                 minLength='50'
                 maxLength='150'
                 placeholder='Write your message here...'
-                required
-              ></textarea>
+                required></textarea>
               {(user.comment === "" || user.comment.length < 50) && (
                 <p className='flex items-center text-red-500 text-xs'>
                   <FaExclamation /> {errorMessage.comment}
@@ -134,8 +133,7 @@ const Feedback = () => {
             <button
               type='submit'
               disabled={disabledState}
-              className='bg-white text-slate-700 px-4 py-2 rounded-lg ease-linear duration-300 disabled:bg-gray-500 disabled:bg-opacity-50'
-            >
+              className='bg-white text-slate-700 px-4 py-2 rounded-lg ease-linear duration-300 disabled:bg-gray-500 disabled:bg-opacity-50'>
               SEND
             </button>
             <ToastContainer

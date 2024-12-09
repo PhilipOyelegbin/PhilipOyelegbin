@@ -71,7 +71,7 @@ const Testimonial = () => {
   }, []);
 
   return (
-    <section className='px-5 py-10 lg:px-20'>
+    <section className='my-12 px-5 py-10 lg:px-20'>
       <h2 className='text-center'>TESTIMONIAL</h2>
       <div className='mx-auto mt-3'>
         {loading ? (
@@ -91,8 +91,7 @@ const Testimonial = () => {
                   ?.map((testimony) => (
                     <div
                       className='flex flex-col items-center bg-slate-700 bg-opacity-30 rounded-md p-5 h-72 md:h-60 overflow-y-scroll'
-                      key={testimony.email}
-                    >
+                      key={testimony.email}>
                       <h3 className='text-2xl text-center mb-2'>
                         {testimony.full_name}
                       </h3>

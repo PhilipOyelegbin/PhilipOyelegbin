@@ -10,7 +10,7 @@ export const EducationData = [
     duration: "2022 - 2023",
   },
   {
-    certificate: "HND, Industrial Maintenance Engineer",
+    certificate: "Industrial Maint. Engr.",
     institution: "Yaba College of Technology",
     duration: "2019 - 2022",
   },
@@ -45,6 +45,14 @@ export const SkillsData = {
     {
       cover_image: "/express.svg",
       label: "Express",
+    },
+    {
+      cover_image: "/nestjs.svg",
+      label: "NestJs",
+    },
+    {
+      cover_image: "/typescript.svg",
+      label: "TypeScript",
     },
     {
       cover_image: "/mongodb.svg",
@@ -101,22 +109,22 @@ export const SkillsData = {
 
 export const ExperienceData = [
   {
+    role: "Backend Engineer",
+    company: "ReCreaX",
+    duration: "2024 - till date",
+  },
+  {
     role: "Customer Support Officer",
     company: "GO54 (Whogohost Limited)",
     duration: "2022 - till date",
   },
   {
-    role: "Frontend Engineer (Volunteer)",
-    company: "See9ja",
-    duration: "2022 - 2024",
-  },
-  {
-    role: "Frontend Engineer (Volunteer)",
+    role: "Frontend Engineer",
     company: "Valorise Limited",
     duration: "2022 - 2023",
   },
   {
-    role: "Robotics Instructor (Contract)",
+    role: "Robotics Instructor",
     company: "WiFi Combat Academy",
     duration: "2021 - 2023",
   },

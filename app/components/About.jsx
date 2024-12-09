@@ -6,27 +6,15 @@ import Flow from "./Flow";
 const About = () => {
   return (
     <section id='about' className='about-section'>
-      <div className='flex flex-col gap-4 text-center items-center lg:items-start lg:text-left lg:w-1/2'>
-        <h2>Hi, I am Philip Oyelegbin</h2>
+      <div className='text-white flex flex-col gap-4 text-center justify-center items-center lg:w-1/2 mx-auto'>
+        <h2 className='text-inherit lg:text-4xl'>Hello! I'm Philip 👋</h2>
 
-        <p>
-          I am an{" "}
-          <strong>Experienced Support Specialist, Backend Developer</strong>,
-          and <strong>Cloud Engineer</strong> with a background in Customer
-          Support and Frontend development. I have proven skills in{" "}
-          <strong>
-            customer service, technical support, JavaScript (NodeJS), HTML5,
-            CSS, React.js, cloud services
-          </strong>
-          , and <strong>Infrastructure as Code (IaC)</strong>. I am experienced
-          with <strong>Google Cloud Platform (GCP), Terraform</strong>, and{" "}
-          <strong>Ansible</strong>.
-        </p>
-
-        <p className='mt-3'>
-          I have served as a Robotics Instructor, demonstrating leadership and
-          commitment to STEM education. I am adaptable, collaborative,
-          innovative, and eager to contribute to a dynamic team.
+        <p className='lg:text-xl font-light'>
+          Highly skilled and versatile professional with expertise in{" "}
+          <strong>Frontend</strong>, <strong>Backend</strong>, and{" "}
+          <strong>Cloud Engineering</strong>. Currently working as a Customer
+          Support Officer, utilizing technical knowledge to provide top-notch
+          support and resolve complex issues.
         </p>
 
         <Link
@@ -38,9 +26,14 @@ const About = () => {
         </Link>
       </div>
 
-      <div className='lg:w-1/2 lg:h-[400px]'>
+      {/* <div className='lg:w-1/2 lg:h-[400px]'>
         <div className='w-full aspect-video'>
-          <Flow />
+          <Image
+            src='/profile.png'
+            className='profile-image'
+            width={100}
+            height={100}
+          />
         </div>
 
         <div className='mt-3 flex gap-5 mx-auto w-fit px-4 py-2 rounded-full'>
@@ -72,7 +65,7 @@ const About = () => {
             <FaGithub className='social-icon' />
           </Link>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

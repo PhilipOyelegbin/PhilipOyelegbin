@@ -2,13 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.slick-slide > div {
+  margin: 0 10px;
+}
 
-.slick-slide > div {margin: 0 10px;}
-
-.slick-list {margin: 0 -10px;}
+.slick-list {
+  margin: 0 -10px;
+}
 
 @layer base {
-  *, ::before, ::after {
+  *,
+  ::before,
+  ::after {
     @apply m-0 p-0 scroll-smooth box-border leading-6;
   }
 
@@ -19,44 +24,59 @@
     @apply fixed lg:flex lg:items-center lg:static bg-purple-950 lg:bg-transparent w-full lg:w-auto py-4 lg:py-0 top-12 md:top-14 transition-all ease-in-out duration-300;
   }
 
-  nav > ul {@apply flex flex-col gap-5 lg:flex-row;}
-  nav > ul > li {@apply flex lg:flex-col mx-5 lg:mx-0;}
+  nav > ul {
+    @apply flex flex-col gap-5 lg:flex-row;
+  }
+  nav > ul > li {
+    @apply flex lg:flex-col mx-5 lg:mx-0;
+  }
 
   main {
     @apply text-slate-700 text-xs lg:text-sm;
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: "Montserrat Alternates", sans-serif;
   }
 
-  h2 {@apply text-slate-700 text-2xl lg:text-[26px] leading-8 font-bold;}
+  h2 {
+    @apply text-slate-700 text-2xl lg:text-[26px] leading-8 font-bold;
+  }
 
-  h3 {@apply text-xl lg:text-[22px] leading-8;}
+  h3 {
+    @apply text-xl lg:text-[22px] leading-8;
+  }
 
-  h4 {@apply text-base lg:text-lg;}
+  h4 {
+    @apply text-base lg:text-lg;
+  }
 
-  p {@apply text-sm;}
+  p {
+    @apply text-sm;
+  }
 }
 
 @layer components {
-  #root {@apply lg:relative;}
-
-  .menuLink {@apply text-lg ml-2 ease-linear duration-300 hover:text-slate-400 md:ml-0;}
-
-  .about-section {
-    @apply px-5 py-10 flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center gap-3 lg:px-20 pt-20 lg:h-screen;
+  #root {
+    @apply lg:relative;
   }
 
-  /* .profile-image {
-    @apply mx-auto lg:w-full lg:h-full border-[4px] border-solid border-purple-700;
-    border-radius: 80% 30%/30% 80%;
-  } */
+  .menuLink {
+    @apply text-lg ml-2 ease-linear duration-300 hover:text-slate-400 md:ml-0;
+  }
 
-  .social-icon {@apply text-purple-950 w-6 h-6}
+  .about-section {
+    @apply bg-[#444] bg-[url('/profile.png')] bg-no-repeat bg-cover bg-center bg-blend-overlay px-5 py-10 flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center gap-3 lg:px-20 pt-20 lg:h-screen;
+  }
+
+  .social-icon {
+    @apply text-purple-950 w-6 h-6;
+  }
 
   .btn {
     @apply inline-block bg-gradient-to-r from-purple-950 to-purple-700 ease-linear duration-300 hover:bg-gradient-to-bl hover:from-purple-950 hover:to-purple-700 rounded-full text-center text-2xl text-slate-200 py-2 px-8 mt-5;
   }
 
-  .tab-btn {@apply border border-purple-700 text-purple-700 px-3 py-2 rounded-lg cursor-pointer ease-linear duration-300}
+  .tab-btn {
+    @apply border border-purple-700 text-purple-700 px-3 py-2 rounded-lg cursor-pointer ease-linear duration-300;
+  }
 
   .skill-container {
     @apply flex flex-wrap justify-center items-center gap-5 px-5 py-5 lg:px-20 text-center;
@@ -73,11 +93,16 @@
     @apply bg-gray-700 bg-[url('/feedback.jpg')] bg-no-repeat bg-cover bg-center md:bg-right bg-blend-overlay rounded-2xl;
   }
 
-  .form-control {@apply flex flex-col my-3 w-full;}
+  .form-control {
+    @apply flex flex-col my-3 w-full;
+  }
 
-  .form-control input[type="range"] {@apply p-0;}
+  .form-control input[type="range"] {
+    @apply p-0;
+  }
 
-  .form-control input, textarea {
+  .form-control input,
+  textarea {
     @apply bg-slate-300 text-black mb-2 p-2 rounded-md w-full focus:outline-none border invalid:border-red-500 valid:border-lime-500;
   }
 }

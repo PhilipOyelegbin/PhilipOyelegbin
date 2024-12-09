@@ -77,15 +77,14 @@ const CloudProjects = () => {
   }, []);
 
   return (
-    <section className='text-center px-5 py-5 lg:px-20'>
+    <section className='my-12 text-center px-5 py-5 lg:px-20'>
       <p className='lg:text-center'>
         Here is a selection of my cloud/devops work,{" "}
         <strong>
           view others on{" "}
           <Link
             href='https://github.com/PhilipOyelegbin'
-            className='text-purple-700'
-          >
+            className='text-purple-700'>
             GitHub
           </Link>
           .
@@ -109,8 +108,7 @@ const CloudProjects = () => {
                 return (
                   <figure
                     className='card bg-slate-700 bg-opacity-30 hover:shadow-md hover:shadow-slate-700 h-[490px]'
-                    key={project._id}
-                  >
+                    key={project._id}>
                     <Image
                       src={project.cover_image || "Unavailable"}
                       className='w-full rounded-t-lg h-56'
@@ -130,8 +128,7 @@ const CloudProjects = () => {
                           href={project.project_url}
                           className='hover:text-purple-700'
                           target='_blank'
-                          rel='noopener noreferrer'
-                        >
+                          rel='noopener noreferrer'>
                           <FaYoutube />
                         </Link>
                         {project.github_url && (
@@ -139,8 +136,7 @@ const CloudProjects = () => {
                             href={project.github_url}
                             className='hover:text-purple-700'
                             target='_blank'
-                            rel='noopener noreferrer'
-                          >
+                            rel='noopener noreferrer'>
                             <FaGithub />
                           </Link>
                         )}
