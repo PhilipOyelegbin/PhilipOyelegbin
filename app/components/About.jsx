@@ -6,7 +6,7 @@ import Flow from "./Flow";
 const About = () => {
   return (
     <section id='about' className='about-section'>
-      <div className='text-white flex flex-col gap-4 text-center justify-center items-center lg:w-1/2 mx-auto'>
+      <div className='text-white flex flex-col gap-4 text-center justify-center items-center md:w-1/2 mx-auto'>
         <h2 className='text-inherit lg:text-4xl'>Hello! I'm Philip 👋</h2>
 
         <p className='lg:text-xl font-light'>

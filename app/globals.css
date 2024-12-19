@@ -63,7 +63,7 @@
   }
 
   .about-section {
-    @apply bg-[#444] bg-[url('/profile.png')] bg-no-repeat bg-cover bg-center bg-blend-overlay px-5 py-10 flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center gap-3 lg:px-20 pt-20 lg:h-screen;
+    @apply bg-[#444] bg-[url('/profile.png')] bg-no-repeat bg-cover bg-center bg-blend-overlay bg-fixed px-5 py-10 flex justify-between items-center gap-3 lg:px-20 pt-20 h-screen;
   }
 
   .social-icon {
