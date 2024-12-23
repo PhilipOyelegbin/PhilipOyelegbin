@@ -10,15 +10,15 @@ const montAlt = Montserrat_Alternates({
 
 export const metadata = {
   metadataBase: new URL(process.env.HOST_URI),
-  title: "Philip Oyelegbin - Web and Cloud Engineer",
+  title: "Philip Oyelegbin - Full Stack and Cloud Engineer",
   description:
-    "Experienced Support Specialist | Backend Developer | Cloud & Data Engineer",
+    "Experienced Support Specialist | Frontend Developer | Backend Developer | Cloud & Data Engineer",
   favicon: "./favicon.ico",
   type: "website",
   openGraph: {
-    title: "Philip Oyelegbin - Backend and Cloud Engineer",
+    title: "Philip Oyelegbin - Full Stack and Cloud Engineer",
     description:
-      "Experienced Support Specialist | Backend Developer | Cloud & Data Engineer",
+      "Experienced Support Specialist | Frontend Developer | Backend Developer | Cloud & Data Engineer",
     url: process.env.HOST_URI,
     type: "website",
     locale: "en_US",

@@ -1,14 +1,14 @@
 export const metadata = {
   metadataBase: new URL(process.env.HOST_URI),
-  title: "Admin: Philip Oyelegbin - Web and Cloud Engineer",
+  title: "Admin: Philip Oyelegbin - Full Stack and Cloud Engineer",
   description:
-    "Result-Driven Support Specialist | Frontend Developer | Cloud Engineer | Passionate Innovator | STEM Advocate",
+    "Result-Driven Support Specialist | Frontend Developer | Backend Developer | Cloud Engineer.",
   favicon: "/favicon.ico",
   type: "website",
   openGraph: {
-    title: "Admin: Philip Oyelegbin - Web and Cloud Engineer",
+    title: "Admin: Philip Oyelegbin - Full Stack and Cloud Engineer",
     description:
-      "Result-Driven Support Specialist | Frontend Developer | Cloud Engineer | Passionate Innovator | STEM Advocate",
+      "Result-Driven Support Specialist | Frontend Developer | Backend Develper | Cloud Engineer.",
     url: process.env.HOST_URI,
     type: "website",
     locale: "en_US",

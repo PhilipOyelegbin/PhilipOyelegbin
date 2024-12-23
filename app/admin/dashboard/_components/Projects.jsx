@@ -118,7 +118,7 @@ const Projects = () => {
                 project?.map((project) => {
                   return (
                     <figure
-                      className='card bg-slate-700 bg-opacity-30 hover:shadow-md hover:shadow-slate-700 h-[490px]'
+                      className='card bg-slate-700 bg-opacity-30 hover:shadow-md hover:shadow-slate-700'
                       key={project._id}>
                       <Image
                         src={project.cover_image || "Unavailable"}
@@ -128,12 +128,14 @@ const Projects = () => {
                         alt='project background'
                       />
                       <figcaption className='p-3'>
-                        <h3 className='text-xl'>
-                          {project.title || "Unavailable"}
-                        </h3>
-                        <p className='text-sm'>
-                          {project.description || "Unavailable"}
-                        </p>
+                        <div className='h-52 md:h-44 space-y-2 border-b-2 border-gray-500'>
+                          <h3 className='text-xl text-center'>
+                            {project.title || "Unavailable"}
+                          </h3>
+                          <p className='text-sm'>
+                            {project.description || "Unavailable"}
+                          </p>
+                        </div>
                         <div className='flex gap-5 justify-center items-center text-2xl mt-3'>
                           <Link
                             href={`/admin/dashboard/update/project/${project._id}`}>

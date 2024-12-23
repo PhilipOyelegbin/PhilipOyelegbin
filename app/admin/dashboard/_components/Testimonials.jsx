@@ -110,12 +110,12 @@ export const Testimonials = () => {
               {testimonials &&
                 testimonials?.map((testimony) => (
                   <div
-                    className='flex flex-col items-center bg-slate-700 bg-opacity-30 rounded-md p-5 h-72 md:h-60 overflow-y-scroll'
+                    className='flex flex-col items-center bg-slate-700 bg-opacity-30 rounded-md p-5 overflow-y-scroll'
                     key={testimony.email}>
                     <h3 className='text-2xl text-center mb-2'>
                       {testimony.full_name}
                     </h3>
-                    <p>{testimony.comment}</p>
+                    <p className='h-32 md:h-24'>{testimony.comment}</p>
                     <p className='mt-2 text-purple-700 text-center'>
                       Rated: {testimony.rating}.0
                     </p>

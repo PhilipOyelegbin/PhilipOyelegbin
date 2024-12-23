@@ -77,7 +77,7 @@ const CloudProjects = () => {
   }, []);
 
   return (
-    <section className='my-12 text-center px-5 py-5 lg:px-20'>
+    <section className='text-center px-5 py-5 lg:px-20'>
       <p className='lg:text-center'>
         Here is a selection of my cloud/devops work,{" "}
         <strong>
@@ -107,7 +107,7 @@ const CloudProjects = () => {
               .map((project) => {
                 return (
                   <figure
-                    className='card bg-slate-700 bg-opacity-30 hover:shadow-md hover:shadow-slate-700 h-[490px]'
+                    className='card bg-slate-700 bg-opacity-30 hover:shadow-md hover:shadow-slate-700'
                     key={project._id}>
                     <Image
                       src={project.cover_image || "Unavailable"}
@@ -117,12 +117,14 @@ const CloudProjects = () => {
                       alt='project background'
                     />
                     <figcaption className='p-3'>
-                      <h3 className='text-xl'>
-                        {project.title || "Unavailable"}
-                      </h3>
-                      <p className='text-sm'>
-                        {project.description || "Unavailable"}
-                      </p>
+                      <div className='h-52 md:h-44 space-y-2 border-b-2 border-gray-500'>
+                        <h3 className='text-xl'>
+                          {project.title || "Unavailable"}
+                        </h3>
+                        <p className='text-sm text-left'>
+                          {project.description || "Unavailable"}
+                        </p>
+                      </div>
                       <div className='flex gap-5 items-center text-2xl mt-3'>
                         <Link
                           href={project.project_url}

@@ -27,7 +27,7 @@ export default function Home() {
       <About />
       <div
         id='qualifications'
-        className='flex justify-center text-gray-800 gap-3 py-4'>
+        className='flex justify-center text-gray-800 gap-3 pt-10'>
         <p
           role='tab'
           className={`tab-btn ${

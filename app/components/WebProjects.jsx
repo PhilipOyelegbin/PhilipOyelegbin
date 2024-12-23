@@ -84,8 +84,7 @@ const WebProjects = () => {
           view others on{" "}
           <Link
             href='https://github.com/PhilipOyelegbin'
-            className='text-purple-700'
-          >
+            className='text-purple-700'>
             GitHub
           </Link>
           .
@@ -108,9 +107,8 @@ const WebProjects = () => {
               .map((project) => {
                 return (
                   <figure
-                    className='card bg-slate-700 bg-opacity-30 hover:shadow-md hover:shadow-slate-700 h-[490px]'
-                    key={project._id}
-                  >
+                    className='card bg-slate-700 bg-opacity-30 hover:shadow-md hover:shadow-slate-700'
+                    key={project._id}>
                     <Image
                       src={project.cover_image || "Unavailable"}
                       className='w-full rounded-t-lg h-56'
@@ -119,19 +117,20 @@ const WebProjects = () => {
                       alt='project background'
                     />
                     <figcaption className='p-3'>
-                      <h3 className='text-xl'>
-                        {project.title || "Unavailable"}
-                      </h3>
-                      <p className='text-sm'>
-                        {project.description || "Unavailable"}
-                      </p>
+                      <div className='h-52 md:h-44 space-y-2 border-b-2 border-gray-500'>
+                        <h3 className='text-xl'>
+                          {project.title || "Unavailable"}
+                        </h3>
+                        <p className='text-sm text-left'>
+                          {project.description || "Unavailable"}
+                        </p>
+                      </div>
                       <div className='flex gap-5 items-center text-2xl mt-3'>
                         <Link
                           href={project.project_url}
                           className='hover:text-purple-700'
                           target='_blank'
-                          rel='noopener noreferrer'
-                        >
+                          rel='noopener noreferrer'>
                           <FaInternetExplorer />
                         </Link>
                         {project.github_url && (
@@ -139,8 +138,7 @@ const WebProjects = () => {
                             href={project.github_url}
                             className='hover:text-purple-700'
                             target='_blank'
-                            rel='noopener noreferrer'
-                          >
+                            rel='noopener noreferrer'>
                             <FaGithub />
                           </Link>
                         )}

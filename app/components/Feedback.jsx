@@ -1,48 +1,51 @@
-import { useState } from "react";
 import { FaExclamation, FaStar } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  full_name: yup.string().required("Full name is required"),
+  email: yup.string().email("Invalid email").required("Email is required"),
+  comment: yup
+    .string()
+    .min(100, "Comment must not be less than 100 characters")
+    .max(200, "Comment must not exceed 200 characters")
+    .required("Comment is required"),
+  rating: yup
+    .number()
+    .min(0, "Rating must be at least 0")
+    .max(5, "Rating must not exceed 5")
+    .required("Rating is required"),
+  approved: yup.boolean().default(false),
+});
 
 const Feedback = () => {
-  const [user, setUser] = useState({
-    full_name: "",
-    email: "",
-    comment: "",
-    rating: 5,
-    approved: false,
-  });
+  const {
+    register,
+    handleSubmit,
+    reset,
+    getValues,
+    formState: { errors, isSubmitting },
+  } = useForm({ mode: "onBlur", resolver: yupResolver(schema) });
 
-  const errorMessage = {
-    full_name: "Required and must be minimum of 4 characters",
-    email: "Required and must be a valid email address",
-    comment: "Required and minimum of 50 characters",
-  };
-
-  const disabledState =
-    user.full_name === "" ||
-    user.full_name.length < 4 ||
-    user.email === "" ||
-    !user.email.includes("@") ||
-    user.comment === "" ||
-    user.comment.length < 50;
-
-  const handleSend = async (e) => {
-    e.preventDefault();
-    await fetch("/api/feedbacks", {
-      method: "POST",
-      body: JSON.stringify(user),
-    })
-      .then(() => {
-        toast.success("Feedback sent!");
-        setUser({ full_name: "", email: "", comment: "", rating: 5 });
-      })
-      .catch((error) => {
-        error.message && toast.error("Unable to send feedback.");
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch("/api/feedbacks", {
+        method: "POST",
+        body: JSON.stringify(data),
       });
-  };
 
-  const handleChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+      if (response.ok) {
+        toast.success("Feedback sent!");
+        reset();
+      } else {
+        toast.error("Unable to send feedback.");
+      }
+    } catch (error) {
+      toast.error(error);
+    }
   };
 
   return (
@@ -53,88 +56,73 @@ const Feedback = () => {
           <h3 className='text-2xl font-extrabold mb-3'>
             I will love to hear your feedback
           </h3>
-          <form onSubmit={handleSend} autoComplete='false'>
-            <input
-              type='hidden'
-              name='approved'
-              value={user.approved}
-              onChange={handleChange}
-            />
+
+          <form onSubmit={handleSubmit(onSubmit)} autoComplete='false'>
             <div className='form-control'>
               <label htmlFor='rating' className='flex items-center gap-1'>
-                Rate my service: {user.rating}
+                Rate my service: {getValues("rating")}
                 <FaStar className='text-base text-yellow-500' />
               </label>
               <input
+                {...register("rating")}
                 type='range'
-                name='rating'
-                min={0}
-                max={5}
-                value={user.rating}
-                onChange={handleChange}
+                id='rating'
+                min='0'
+                max='5'
+                defaultValue={5}
               />
             </div>
+
             <div className='form-control'>
               <label htmlFor='full_name'>Full name:</label>
               <input
+                {...register("full_name")}
                 id='full_name'
                 type='text'
-                name='full_name'
-                value={user.full_name}
-                onChange={handleChange}
-                minLength='4'
-                maxLength='50'
                 placeholder='Enter your full name'
-                required
               />
-              {(user.full_name === "" || user.full_name.length < 4) && (
-                <p className='flex items-center text-red-500 text-xs'>
-                  <FaExclamation /> {errorMessage.full_name}
-                </p>
+              {errors.full_name && (
+                <span className='flex items-center text-red-500 text-xs'>
+                  <FaExclamation /> {errors.full_name.message}
+                </span>
               )}
             </div>
+
             <div className='form-control'>
               <label htmlFor='email'>Email:</label>
               <input
+                {...register("email")}
                 id='email'
                 type='email'
-                name='email'
-                value={user.email}
-                onChange={handleChange}
                 placeholder='Enter your email'
-                required
               />
-              {(user.email === "" || !user.email.includes("@")) && (
-                <p className='flex items-center text-red-500 text-xs'>
-                  <FaExclamation /> {errorMessage.email}
-                </p>
+              {errors.email && (
+                <span className='flex items-center text-red-500 text-xs'>
+                  <FaExclamation /> {errors.email.message}
+                </span>
               )}
             </div>
+
             <div className='form-control'>
               <label htmlFor='comment'>Comment:</label>
               <textarea
+                {...register("comment")}
                 id='comment'
-                name='comment'
                 cols='30'
                 rows='5'
-                value={user.comment}
-                onChange={handleChange}
-                minLength='50'
-                maxLength='150'
-                placeholder='Write your message here...'
-                required></textarea>
-              {(user.comment === "" || user.comment.length < 50) && (
-                <p className='flex items-center text-red-500 text-xs'>
-                  <FaExclamation /> {errorMessage.comment}
-                </p>
+                placeholder='Write your message here...'></textarea>
+              {errors.comment && (
+                <span className='flex items-center text-red-500 text-xs'>
+                  <FaExclamation /> {errors.comment.message}
+                </span>
               )}
             </div>
 
             <button
               type='submit'
-              disabled={disabledState}
-              className='bg-white text-slate-700 px-4 py-2 rounded-lg ease-linear duration-300 disabled:bg-gray-500 disabled:bg-opacity-50'>
-              SEND
+              disabled={isSubmitting}
+              className='bg-white disabled:bg-gray-500 text-slate-700 px-4 py-2 rounded-lg ease-linear duration-300'>
+              {isSubmitting ? "Processing..." : "Send"}
             </button>
             <ToastContainer
               position='top-right'
