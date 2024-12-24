@@ -103,6 +103,6 @@
 
   .form-control input,
   textarea {
-    @apply bg-slate-300 text-black mb-2 p-2 rounded-md w-full focus:outline-none border invalid:border-red-500 valid:border-lime-500;
+    @apply bg-slate-300 text-black mb-2 p-2 rounded-md w-full focus:outline-none;
   }
 }
