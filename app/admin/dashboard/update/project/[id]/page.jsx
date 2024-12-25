@@ -20,7 +20,7 @@ const schema = yup.object().shape({
   tag: yup.string().required("Tag is required"),
   cover_image: yup.string().required("Cover image is required"),
   project_url: yup.string().required("Project link is required"),
-  github_url: yup.string().required("Github link is required"),
+  github_url: yup.string(),
 });
 
 const ProjectDetail = ({ params }) => {
