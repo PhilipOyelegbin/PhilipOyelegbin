@@ -61,14 +61,6 @@ export async function POST(req) {
   }
 }
 
-function formDataToJson(formData) {
-  const jsonData = {};
-  for (const [key, value] of formData.entries()) {
-    jsonData[key] = value;
-  }
-  return jsonData;
-}
-
 export async function GET() {
   try {
     const projectData = await Project.find();
@@ -76,6 +68,7 @@ export async function GET() {
     const projectWithImage = projectData.map((list) => {
       const cover_image = `${process.env.R2_PUBLIC_ENDPOINT}/portfolio-buk/${list.cover_image}`;
       return {
+        _id: list._id,
         cover_image,
         title: list.title,
         description: list.description,
@@ -95,4 +88,12 @@ export async function GET() {
       { status: 500 }
     );
   }
+}
+
+function formDataToJson(formData) {
+  const jsonData = {};
+  for (const [key, value] of formData.entries()) {
+    jsonData[key] = value;
+  }
+  return jsonData;
 }

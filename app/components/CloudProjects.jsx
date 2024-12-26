@@ -71,7 +71,7 @@ const CloudProjects = () => {
   useEffect(() => {
     fetch("/api/projects")
       .then((resp) => resp.json())
-      .then((data) => setProjects(data.projectData))
+      .then((data) => setProjects(data.projectWithImage))
       .catch((err) => setErrorMsg("Unable to load projects, try again later"))
       .finally(() => setLoading(false));
   }, []);

@@ -17,7 +17,24 @@ const schema = yup.object().shape({
     .max(200, "Description must not exceed 200 characters")
     .required("Description is required"),
   tag: yup.string().required("Tag is required"),
-  cover_image: yup.string().required("Cover image is required"),
+  cover_image: yup
+    .mixed()
+    .required("A file is required")
+    .test("type", "Only image file formats are accepted", (value) => {
+      return (
+        value &&
+        (value[0]?.type === "image/jpeg" ||
+          value[0]?.type === "image/bmp" ||
+          value[0]?.type === "image/jpg" ||
+          value[0]?.type === "image/png")
+      );
+    })
+    .test(
+      "fileSize",
+      "File size must be less than 1MB",
+      (value) => value[0]?.size <= 1024 * 1024 // Updated file size check
+    )
+    .required("A file is required"),
   project_url: yup.string().required("Project link is required"),
   github_url: yup.string(),
 });
@@ -32,17 +49,28 @@ const Project = () => {
   } = useForm({ mode: "onBlur", resolver: yupResolver(schema) });
 
   const onCreate = async (data) => {
-    await fetch(`/api/projects`, {
-      method: "POST",
-      body: JSON.stringify(data),
-    })
-      .then(() => {
-        navigate.replace("/");
-        reset();
-      })
-      .catch((error) => {
-        error.message && toast.error("An error occured!");
+    const formData = new FormData();
+    formData.append("cover_image", data.cover_image[0]);
+    formData.append("title", data.title);
+    formData.append("description", data.description);
+    formData.append("tag", data.tag);
+    formData.append("project_url", data.project_url);
+    formData.append("github_url", data.github_url);
+
+    try {
+      const response = await fetch(`/api/projects`, {
+        method: "POST",
+        body: formData,
       });
+      if (response.ok) {
+        reset();
+        navigate.replace("/");
+      } else {
+        toast.error("An error occured!");
+      }
+    } catch (error) {
+      toast.error(error);
+    }
   };
 
   return (
@@ -53,8 +81,9 @@ const Project = () => {
           <input
             {...register("cover_image")}
             id='cover_image'
-            type='url'
-            placeholder='Enter your cover image URL'
+            type='file'
+            accept='image/*'
+            placeholder='Upload a cover image'
           />
           {errors.cover_image && (
             <span className='flex items-center text-red-500 text-xs'>

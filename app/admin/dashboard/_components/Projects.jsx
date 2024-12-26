@@ -87,7 +87,7 @@ const Projects = () => {
   useEffect(() => {
     fetch("/api/projects")
       .then((resp) => resp.json())
-      .then((data) => setProject(data.projectData))
+      .then((data) => setProject(data.projectWithImage))
       .catch((err) => setErrorMsg("Unable to load projects, try again later"))
       .finally(() => setLoading(false));
   }, []);
