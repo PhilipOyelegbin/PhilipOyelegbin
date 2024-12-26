@@ -40,7 +40,10 @@ export async function POST(req) {
     const jsonData = formDataToJson(formData);
 
     // save data to database
-    const projectData = await Project.create(jsonData);
+    const projectData = await Project.create({
+      cover_image: file.name,
+      ...jsonData,
+    });
     return NextResponse.json(
       { message: "Project saved successfully", projectData },
       { status: 201 }
