@@ -42,7 +42,11 @@ export async function POST(req) {
     // save data to database
     const projectData = await Project.create({
       cover_image: file.name,
-      ...jsonData,
+      title: jsonData.title,
+      description: jsonData.description,
+      tag: jsonData.tag,
+      project_url: jsonData.project_url,
+      gitub_url: jsonData.gitub_url,
     });
     return NextResponse.json(
       { message: "Project saved successfully", projectData },
