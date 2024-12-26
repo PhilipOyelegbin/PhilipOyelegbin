@@ -19,7 +19,7 @@ const projectSchema = new Schema(
       type: String,
       require: [true, "The project url is required"],
     },
-    github_url: { type: String, require: [true, "The github url is required"] },
+    github_url: { type: String },
   },
   { timestamps: true }
 );
