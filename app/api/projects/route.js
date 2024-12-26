@@ -48,6 +48,7 @@ export async function POST(req) {
       project_url: jsonData.project_url,
       gitub_url: jsonData.gitub_url,
     });
+
     return NextResponse.json(
       { message: "Project saved successfully", projectData },
       { status: 201 }
@@ -73,10 +74,14 @@ export async function GET() {
     const projectData = await Project.find();
 
     const projectWithImage = projectData.map((list) => {
-      const cover_image = `${process.env.R2_PUBLIC_ENDPOINT}/${list.cover_image}`;
+      const cover_image = `${process.env.R2_PUBLIC_ENDPOINT}/portfolio-buk/${list.cover_image}`;
       return {
-        ...list,
         cover_image,
+        title: list.title,
+        description: list.description,
+        tag: list.tag,
+        project_url: list.project_url,
+        github_url: list.github_url,
       };
     });
 
