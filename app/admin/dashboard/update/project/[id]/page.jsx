@@ -18,7 +18,7 @@ const schema = yup.object().shape({
     .max(200, "Description must not exceed 200 characters")
     .required("Description is required"),
   tag: yup.string().required("Tag is required"),
-  cover_image: yup.string().required("Cover image is required"),
+  cover_image: yup.mixed(),
   project_url: yup.string().required("Project link is required"),
   github_url: yup.string(),
 });
@@ -40,24 +40,40 @@ const ProjectDetail = ({ params }) => {
       title: projects?.title,
       description: projects?.description,
       tag: projects?.tag,
-      cover_image: projects?.cover_image,
+      cover_image: projects?.cover_image.split("/")[3],
       project_url: projects?.project_url,
       github_url: projects?.github_url,
     },
   });
 
   const onUpdate = async (data) => {
-    await fetch(`/api/projects/${id}`, {
-      method: "PATCH",
-      body: JSON.stringify(data),
-    })
-      .then(() => {
+    const formData = new FormData();
+    formData.append(
+      "cover_image",
+      typeof data.cover_image === "string"
+        ? data.cover_image
+        : data.cover_image[0]
+    );
+    formData.append("title", data.title);
+    formData.append("description", data.description);
+    formData.append("tag", data.tag);
+    formData.append("project_url", data.project_url);
+    formData.append("github_url", data.github_url);
+
+    try {
+      const response = await fetch(`/api/projects/${id}`, {
+        method: "PATCH",
+        body: formData,
+      });
+      if (response.ok) {
         reset();
         navigate.replace("/");
-      })
-      .catch((error) => {
-        error.message && toast.error("An error occured!");
-      });
+      } else {
+        toast.error("An error occured!");
+      }
+    } catch (error) {
+      toast.error(error);
+    }
   };
 
   useEffect(() => {
@@ -73,12 +89,18 @@ const ProjectDetail = ({ params }) => {
     <article className='pt-16 pb-10 lg:h-screen flex flex-col-reverse md:flex-row gap-10 justify-center items-center px-5 lg:px-20'>
       <form onSubmit={handleSubmit(onUpdate)} autoComplete='false'>
         <div className='form-control'>
-          <label htmlFor='cover_image'>Cover Image URL:</label>
+          <label htmlFor='cover_image'>
+            Cover Image URL:{" "}
+            <span className='text-blue-500'>
+              {projects?.cover_image.split("/").pop() || "No file selected"}
+            </span>
+          </label>
           <input
             {...register("cover_image")}
             id='cover_image'
-            type='url'
-            placeholder='Enter your cover image URL'
+            type='file'
+            accept='image/*'
+            placeholder='Upload a cover image'
           />
           {errors.cover_image && (
             <span className='flex items-center text-red-500 text-xs'>

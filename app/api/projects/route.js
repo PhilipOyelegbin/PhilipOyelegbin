@@ -23,6 +23,11 @@ export async function POST(req) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
+    // Enforce file size limit (1MB)
+    if (buffer.length > 1024 * 1024) {
+      throw new Error("File size exceeds 1MB limit.");
+    }
+
     // save image to R2
     const upload = await s3Client.send(
       new PutObjectCommand({
@@ -46,7 +51,7 @@ export async function POST(req) {
       description: jsonData.description,
       tag: jsonData.tag,
       project_url: jsonData.project_url,
-      gitub_url: jsonData.gitub_url,
+      github_url: jsonData.github_url,
     });
 
     return NextResponse.json(
@@ -66,7 +71,7 @@ export async function GET() {
     const projectData = await Project.find();
 
     const projectWithImage = projectData.map((list) => {
-      const cover_image = `${process.env.R2_PUBLIC_ENDPOINT}/portfolio-buk/${list.cover_image}`;
+      const cover_image = `${process.env.R2_PUBLIC_ENDPOINT}/${list.cover_image}`;
       return {
         _id: list._id,
         cover_image,
