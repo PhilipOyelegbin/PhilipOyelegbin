@@ -4,6 +4,9 @@ name: Test and Build
 
 on:
   push:
+    branches: [main, staging, old]
+  pull_request:
+    types: [opened, reopened]
     branches: [main]
 
 jobs:
