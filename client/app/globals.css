@@ -7,11 +7,6 @@
 body {
   font-family: "Arial", sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden; */
 }
 
 .logo {
@@ -111,7 +106,7 @@ body {
 
 @layer utilities {
   .nav-container {
-    @apply fixed border-t lg:flex lg:items-center lg:static lg:bg-transparent w-full lg:w-auto p-4 space-y-3 lg:py-0 top-12 md:top-14 transition-all ease-in-out duration-300;
+    @apply fixed border-t lg:hidden w-full p-4 space-y-3 top-12 md:top-14 transition-all ease-in-out duration-300;
   }
 
   .bg-primary {

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { Certificates } from "@/app/utils/data";
 
 const Hero = () => {
   const yearOfExperience = new Date().getFullYear() - 2021;
@@ -17,7 +18,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="py-10 mt-10 md:h-screen flex justify-center items-center md:overflow-hidden inset-0 bg-gradient-to-br from-primary-50 via-background to-accent-50">
+    <section className="relative py-10 px-5 md:px-10 mt-10 flex justify-center items-center md:overflow-hidden inset-0 bg-gradient-to-br from-primary-50 via-background to-accent-50">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <svg
@@ -84,24 +85,15 @@ const Hero = () => {
 
           {/* Quick Stats */}
           <div
-            className="animate-slide-up grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-12"
+            className="animate-slide-up grid grid-cols-3 gap-6 max-w-3xl mx-auto mb-12"
             style={{ animationDelay: "0.3s" }}
           >
-            <div className="text-center">
-              <div
-                className="text-3xl font-bold text-primary counter"
-                data-target="15"
-              >
-                0
-              </div>
-              <div className="text-sm text-text-secondary">Technologies</div>
-            </div>
             <div className="text-center">
               <div
                 className="text-3xl font-bold text-accent counter"
                 data-target="8"
               >
-                0
+                {Certificates.length}
               </div>
               <div className="text-sm text-text-secondary">Certifications</div>
             </div>

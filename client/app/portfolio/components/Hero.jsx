@@ -1,9 +1,8 @@
-const Hero = () => {
-  const yearOfExperience = new Date().getFullYear() - 2021;
-
+function Hero() {
   return (
-    <section className="pt-24 pb-16 bg-gradient-to-br from-primary-50 via-background to-accent-50 overflow-hidden">
+    <section className="relative pt-24 pb-16 overflow-hidden">
       {/* Background Pattern */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-background to-accent-50"></div>
       <div className="absolute inset-0 opacity-10">
         <svg
           className="w-full h-full"
@@ -40,14 +39,13 @@ const Hero = () => {
         <div className="text-center max-w-4xl mx-auto">
           <div className="animate-fade-in">
             <h1 className="text-4xl font-bold mb-6">
-              Professional <span className="text-gradient">Journey</span>
+              Project <span className="text-gradient">Portfolio</span>
             </h1>
             <p className="text-xl text-text-secondary mb-8 leading-relaxed">
-              {yearOfExperience} years of continuous growth, innovation, and
-              technical excellence.
+              Comprehensive case studies showcasing technical expertise.
               <br />
               <span className="text-primary font-semibold">
-                From junior developer to technical expert.
+                Where innovation meets measurable impact.
               </span>
             </p>
           </div>
@@ -55,6 +53,6 @@ const Hero = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Hero;

@@ -13,7 +13,7 @@ const About = () => {
           <p className="text-xl text-text-secondary mb-8 leading-relaxed">
             Where passion meets purpose, and technology transforms lives.
             <br />
-            <span class="text-primary font-semibold">
+            <span className="text-primary font-semibold">
               This is my journey of continuous learning and innovation.
             </span>
           </p>

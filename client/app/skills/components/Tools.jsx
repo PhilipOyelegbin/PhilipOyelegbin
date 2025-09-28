@@ -148,7 +148,7 @@ const Tools = () => {
       </div>
 
       {/* AI & Automation */}
-      <div className="skill-category mb-16">
+      {/* <div className="skill-category mb-16">
         <div className="flex items-center mb-8">
           <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4">
             <svg
@@ -163,7 +163,7 @@ const Tools = () => {
             <h2 className="text-3xl font-bold text-primary-900">
               AI & Automation
             </h2>
-            <p className="text-praimry-100">
+            <p className="text-primary-100">
               Intelligent solutions and process automation
             </p>
           </div>
@@ -193,7 +193,7 @@ const Tools = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

@@ -1,3 +1,5 @@
+import { FaCloud, FaAws, FaServer, FaReact, FaLinux } from "react-icons/fa";
+
 export const EducationData = [
   {
     certificate: "Cloud Engineer",
@@ -34,53 +36,47 @@ export const SkillsData = {
       cover_image: "/html.svg",
       label: "HTML",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "HyperText Markup Language is the standard for creating web pages, using tags to structure content like text, images, and links, enabling user-friendly interfaces and interactivity.",
     },
     {
       cover_image: "/css.svg",
       label: "CSS",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "Cascading Style Sheets is used to style and layout web pages, controlling colors, fonts, spacing, and positioning, enhancing the visual appeal and user experience of HTML content.",
     },
     {
       cover_image: "/sass.svg",
       label: "Sass",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "Sassy CSS is a syntax of Sass that extends CSS with features like variables, nested rules, and mixins, making it easier to write and manage styles for complex web projects.",
     },
     {
       cover_image: "/bootstrap.svg",
       label: "Bootsrap",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "Bootstrap is a popular front-end framework that provides pre-designed UI components and responsive grid layouts, enabling developers to create mobile-first, visually appealing web pages quickly and easily.",
     },
     {
       cover_image: "/tailwind.svg",
       label: "Tailwind",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "Tailwind CSS is a utility-first framework that allows developers to build custom designs quickly using pre-defined utility classes, promoting a modular and responsive approach to styling web applications.",
     },
     {
       cover_image: "/javascript.svg",
       label: "JavaScript",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "JavaScript is a versatile scripting language used to create dynamic and interactive web content. It enables features like animations, form validations, and asynchronous communication for a richer user experience.",
     },
     {
       cover_image: "/react.svg",
       label: "React",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "React.js is a JavaScript library for building user interfaces. It allows developers to create reusable components, manage state efficiently, and build dynamic, interactive web applications.",
     },
     {
       cover_image: "/next.svg",
       label: "Next",
-      summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
-    },
-    {
-      cover_image: "/redux.svg",
-      label: "Redux",
       summary:
         "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
     },
@@ -90,81 +86,99 @@ export const SkillsData = {
       cover_image: "/nodejs.svg",
       label: "Nodejs",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "Server-side JavaScript with Express.js, RESTful APIs, and microservices architecture.",
     },
     {
       cover_image: "/express.svg",
       label: "Express",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "Express is a minimalist web framework for Node.js that simplifies the process of building server-side applications. It provides robust features for routing, middleware, and handling HTTP requests.",
     },
     {
       cover_image: "/nestjs.svg",
       label: "NestJs",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "NestJS is a progressive Node.js framework for building efficient, scalable server-side applications. It uses TypeScript and incorporates modern design patterns, making it suitable for complex projects.",
     },
     {
       cover_image: "/typescript.svg",
       label: "TypeScript",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "Strong typing for JavaScript with advanced generics, decorators, and enterprise-scale application development.",
     },
     {
       cover_image: "/mongodb.svg",
       label: "MongoDB",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "MongoDB is a NoSQL database that stores data in flexible, JSON-like documents. It's designed for scalability, high performance, and ease of use, making it ideal for modern web applications.",
     },
     {
       cover_image: "/mysql.svg",
       label: "MySQL",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "MySQL is an open-source relational database management system that uses structured query language (SQL) to manage and store data, providing reliable data storage for web applications and software.",
     },
     {
       cover_image: "/postgresql.svg",
       label: "PostgreSQL",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "PostgreSQL is a powerful open-source relational database that supports advanced data types and complex queries. It's known for its reliability, performance, and extensibility, making it ideal for diverse applications.",
     },
   ],
   CloudSkills: [
     {
+      cover_image: "/aws.svg",
+      label: "AWS",
+      summary:
+        "EC2, S3, Lambda, RDS, CloudFormation for scalable cloud infrastructure and serverless applications.",
+    },
+    {
       cover_image: "/gcp.svg",
       label: "GCP",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "Suite of cloud computing services offering infrastructure, data storage, machine learning, and analytics, enabling businesses to build, deploy, and scale applications efficiently.",
     },
     {
       cover_image: "/nginx.svg",
       label: "Nginx",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "High-performance web server and reverse proxy that efficiently handles static content, load balancing, and HTTPS traffic, making it ideal for serving dynamic websites and applications.",
+    },
+    {
+      cover_image: "/git.svg",
+      label: "Git",
+      summary:
+        "Version control system that tracks changes in source code, allowing multiple developers to collaborate, manage revisions, and maintain project history efficiently and effectively.",
+    },
+    {
+      cover_image: "/github.svg",
+      label: "GitHub",
+      summary:
+        "Web-based platform for version control using Git. It facilitates collaboration on projects, provides repositories for code storage, and offers tools for issue tracking and code reviews.",
     },
     {
       cover_image: "/ansible.svg",
       label: "Ansible",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "Open-source automation tool used for configuration management, application deployment, and task automation, allowing IT teams to manage systems easily and consistently across environments.",
     },
     {
       cover_image: "/terraform.svg",
       label: "Terraform",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "Open-source infrastructure as code tool that allows developers to define and provision cloud resources using a declarative configuration language, enabling efficient and automated infrastructure management.",
     },
     {
       cover_image: "/docker.svg",
       label: "Docker",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "Containerization, Docker Compose, multi-stage builds, and container orchestration.",
     },
     {
       cover_image: "/kubernetes.svg",
       label: "Kubernetes",
       summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
+        "Container orchestration, deployments, services, and cluster management for production workloads.",
     },
   ],
   OtherSkills: [
@@ -177,18 +191,6 @@ export const SkillsData = {
     {
       cover_image: "/vscode.svg",
       label: "VS Code",
-      summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
-    },
-    {
-      cover_image: "/git.svg",
-      label: "Git",
-      summary:
-        "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
-    },
-    {
-      cover_image: "/github.svg",
-      label: "GitHub",
       summary:
         "Building scalable SPAs with hooks, context, and modern patterns. Experience with Next.js, Redux, and testing libraries.",
     },
@@ -277,5 +279,33 @@ export const Services = [
     title: "Build",
     summary:
       "This is where I implement the plan to make your vision come alive on the web page. With the language of computers, I build the structure, give it an attractive look, make it interactive and host it on the web.",
+  },
+];
+
+export const Certificates = [
+  {
+    icon: <FaCloud className="w-8 h-8 text-accent" />,
+    name: "AWS Cloud Practitioner",
+    level: "Associate Level",
+  },
+  {
+    icon: <FaAws className="w-8 h-8 text-accent" />,
+    name: "AWS reStart Graduate",
+    level: "Associate Level",
+  },
+  {
+    icon: <FaLinux className="w-8 h-8 text-accent" />,
+    name: "Introduction To Linux (LFS101)",
+    level: "Associate Level",
+  },
+  {
+    icon: <FaServer className="w-8 h-8 text-secondary-600" />,
+    name: "cPanel & WHM Proficiency",
+    level: "Associate Level",
+  },
+  {
+    icon: <FaReact className="w-8 h-8 text-primary" />,
+    name: "Meta Frontend Developer",
+    level: "Professional Level",
   },
 ];

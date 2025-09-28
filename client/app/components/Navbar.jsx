@@ -1,51 +1,48 @@
 "use client";
 import { useState } from "react";
-// import { HiOutlineMenuAlt3 } from "react-icons/hi";
-// import { FaTimes } from "react-icons/fa";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { FaCode } from "react-icons/fa";
+
+const menuContent = [
+  { id: 1, label: "Home", link: "/" },
+  { id: 2, label: "Skills", link: "/skills" },
+  { id: 3, label: "Experience", link: "/experience" },
+  { id: 4, label: "Portfolio", link: "/portfolio" },
+  { id: 5, label: "Contact", link: "/contact" },
+];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   const handleMenuContent = () => {
     setOpen(!open);
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border flex items-center justify-between h-16 px-5 md:px-10">
       {/* Logo */}
       <div className="flex items-center space-x-2">
+        <FaCode className="w-8 h-8 text-primary" />
         <span className="text-xl font-bold text-gradient">PhilipOyelegbin</span>
       </div>
 
       {/* Desktop Navigation */}
-      <div
-        className={open ? "hidden" : "hidden md:flex items-center space-x-8"}
-      >
-        <Link href="/" className="text-primary font-semibold">
-          Home
-        </Link>
-        <Link
-          href="/skills"
-          className="text-text-secondary hover:text-primary transition-smooth"
-        >
-          Skills
-        </Link>
-        <Link
-          href="/experience"
-          className="text-text-secondary hover:text-primary transition-smooth"
-        >
-          Experience
-        </Link>
-        <Link
-          href="/portfolio"
-          className="text-text-secondary hover:text-primary transition-smooth"
-        >
-          Portfolio
-        </Link>
-        <Link href="/contact" className="btn-primary">
-          Contact
-        </Link>
+      <div className="hidden md:flex items-center space-x-8">
+        {menuContent.map((menu, idx) => (
+          <Link
+            key={idx}
+            className={
+              pathname == menu.link
+                ? "text-primary font-semibold"
+                : "text-text-secondary hover:text-primary transition-smooth"
+            }
+            href={menu.link}
+          >
+            {menu.label}
+          </Link>
+        ))}
       </div>
 
       {/* Mobile Menu Button  */}
@@ -74,95 +71,23 @@ const Navbar = () => {
           open ? "right-0" : "-right-full"
         } bg-background nav-container`}
       >
-        <Link href="/" className="block text-primary font-semibold">
-          Home
-        </Link>
-        <Link
-          href="/skills"
-          className="block text-text-secondary hover:text-primary transition-smooth"
-        >
-          Skills
-        </Link>
-        <Link
-          href="/experience"
-          className="block text-text-secondary hover:text-primary transition-smooth"
-        >
-          Experience
-        </Link>
-        <Link
-          href="/portfolio"
-          className="block text-text-secondary hover:text-primary transition-smooth"
-        >
-          Portfolio
-        </Link>
-        <Link href="/contact" className="block text-primary font-semibold">
-          Contact
-        </Link>
+        {menuContent.map((menu, idx) => (
+          <Link
+            key={idx}
+            className={
+              pathname == menu.link
+                ? "block text-primary font-semibold"
+                : "block text-text-secondary hover:text-primary transition-smooth"
+            }
+            href={menu.link}
+            onClick={handleMenuContent}
+          >
+            {menu.label}
+          </Link>
+        ))}
       </div>
     </nav>
   );
 };
 
 export default Navbar;
-// <header>
-//   {/* logo */}
-//   <div className='flex justify-between items-center'>
-//     <Link
-//       href='/admin/login'
-//       className='logo text-xl md:text-2xl font-bold text-slate-200'>
-//       {"(Philip Oyelegbin) =>"}
-//     </Link>
-//   </div>
-
-//   {/* menu button */}
-//   <button
-//     className='text-4xl cursor-pointer lg:hidden block'
-//     onClick={handleMenuContent}>
-//     <HiOutlineMenuAlt3 className={`h-6 w-6 ${open ? "hidden" : "block"}`} />
-//   </button>
-
-//   {/* menu content */}
-//   <nav className={open ? "right-0" : "-right-full"}>
-//     <ul>
-//       <li>
-//         <Link
-//           href='#about'
-//           className='menuLink'
-//           onClick={handleMenuContent}>
-//           About
-//         </Link>
-//       </li>
-//       <li>
-//         <Link
-//           href='#qualifications'
-//           className='menuLink'
-//           onClick={handleMenuContent}>
-//           Qualifications
-//         </Link>
-//       </li>
-//       <li>
-//         <Link
-//           href='#projects'
-//           className='menuLink'
-//           onClick={handleMenuContent}>
-//           Projects
-//         </Link>
-//       </li>
-//       <li>
-//         <Link
-//           href='#feedback'
-//           className='menuLink'
-//           onClick={handleMenuContent}>
-//           Feedback
-//         </Link>
-//       </li>
-
-//       <FaTimes
-//         className={`h-6 w-6 mx-auto cursor-pointer lg:hidden ${
-//           open ? "block" : "hidden"
-//         }`}
-//         onClick={handleMenuContent}
-//       />
-//     </ul>
-//   </nav>
-// </header>
