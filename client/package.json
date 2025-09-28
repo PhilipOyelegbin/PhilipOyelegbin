@@ -1,0 +1,37 @@
+{
+  "name": "philipoyelegbin.github.io",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.717.0",
+    "@aws-sdk/lib-storage": "^3.717.0",
+    "@hookform/resolvers": "^3.9.1",
+    "@xyflow/react": "^12.3.5",
+    "bcryptjs": "^2.4.3",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.1",
+    "multer": "^1.4.5-lts.1",
+    "next": "^14.2.33",
+    "next-auth": "^4.24.7",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.63.0",
+    "react-icons": "^5.2.1",
+    "react-slick": "^0.30.2",
+    "react-toastify": "^10.0.5",
+    "slick-carousel": "^1.8.1",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}
