@@ -22,7 +22,7 @@ import {
   ApiOperation,
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
-import { JwtGuard } from 'src/auth/guard/auth.guard';
+import { JwtGuard } from './../auth/guard/auth.guard';
 
 @ApiBadRequestResponse({ description: 'Bad request' })
 @ApiUnauthorizedResponse({ description: 'Unathorized' })

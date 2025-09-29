@@ -18,7 +18,7 @@ import {
   FileTypeValidator,
   UseInterceptors,
 } from '@nestjs/common';
-import { JwtGuard } from 'src/auth/guard/auth.guard';
+import { JwtGuard } from './../auth/guard/auth.guard';
 import { ProjectService } from './project.service';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDetailsDto } from './dto/update-details.dto';
