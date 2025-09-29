@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { CreateTestimonialDto } from './dto/create-testimonial.dto';
 import { InjectModel } from '@nestjs/mongoose';
-import { Feedback, FeedbackDocument } from 'src/schemas/feedback.schema';
+import { Feedback, FeedbackDocument } from './../schemas/feedback.schema';
 import { Model } from 'mongoose';
 
 @Injectable()
