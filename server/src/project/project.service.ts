@@ -7,7 +7,7 @@ import {
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDetailsDto } from './dto/update-details.dto';
 import { Model } from 'mongoose';
-import { Project, ProjectDocument } from 'src/schemas/project.schema';
+import { Project, ProjectDocument } from './../schemas/project.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import {
   DeleteObjectCommand,
