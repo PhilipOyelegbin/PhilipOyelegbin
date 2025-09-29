@@ -8,7 +8,7 @@ import { TestimonialModule } from './testimonial/testimonial.module';
 import { AuthModule } from './auth/auth.module';
 import { SeederModule } from './seeder/seeder.module';
 import { SeederService } from './seeder/seeder.service';
-import { User, UserSchema } from 'schemas/user.schema';
+import { User, UserSchema } from './schemas/user.schema';
 
 @Module({
   imports: [
