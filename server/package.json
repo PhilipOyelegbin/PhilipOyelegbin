@@ -32,7 +32,7 @@
     "@nestjs/swagger": "^11.2.0",
     "@nestjs/throttler": "^6.4.0",
     "argon2": "^0.44.0",
-    "className-transformer": "^0.5.1",
+    "class-transformer": "^0.5.1",
     "class-validator": "^0.14.2",
     "mongoose": "^8.18.1",
     "passport-jwt": "^4.0.1",
