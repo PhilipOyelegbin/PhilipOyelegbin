@@ -220,6 +220,8 @@ const FeedbackForm = () => {
                     <Link
                       href="mailto:info@philipoyelegbin.com.ng"
                       className="text-primary hover:text-primary-700 transition-smooth"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       info@philipoyelegbin.com.ng
                     </Link>
@@ -241,6 +243,8 @@ const FeedbackForm = () => {
                     <Link
                       href="https://wa.me/2348054945601"
                       className="text-green-600 hover:text-green-700 transition-smooth"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       +234 805 494 5601
                     </Link>
@@ -312,6 +316,8 @@ const FeedbackForm = () => {
                 <Link
                   href="https://linkedin.com/in/philipoyelegbin"
                   className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-500 hover:text-white transition-smooth"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <svg
                     className="w-6 h-6"
@@ -324,6 +330,8 @@ const FeedbackForm = () => {
                 <Link
                   href="https://github.com/philipoyelegbin"
                   className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-800 hover:text-white transition-smooth"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <svg
                     className="w-6 h-6"
@@ -336,6 +344,8 @@ const FeedbackForm = () => {
                 <Link
                   href="https://twitter.com/oyelegbinphilip"
                   className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-400 hover:text-white transition-smooth"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <svg
                     className="w-6 h-6"

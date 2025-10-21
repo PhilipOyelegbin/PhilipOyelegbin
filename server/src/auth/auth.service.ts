@@ -10,7 +10,7 @@ import * as argon from 'argon2';
 @Injectable()
 export class AuthService {
   constructor(
-    @InjectModel(User.name) private testimonialModel: Model<UserDocument>,
+    @InjectModel(User.name) private userModel: Model<UserDocument>,
     private jwtService: JwtService,
   ) {}
 
@@ -18,7 +18,7 @@ export class AuthService {
     try {
       const { email, password } = dto;
 
-      const user = await this.testimonialModel.find({ email });
+      const user = await this.userModel.find({ email });
       if (!user || user.length === 0) {
         throw new UnauthorizedException('Invalid email or password');
       }

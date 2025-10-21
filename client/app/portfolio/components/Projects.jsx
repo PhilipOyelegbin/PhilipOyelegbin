@@ -235,6 +235,8 @@ function Projects() {
                       <Link
                         href={project.github_url}
                         className="text-text-secondary hover:text-primary transition-smooth"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <svg
                           className="w-5 h-5"
@@ -247,6 +249,8 @@ function Projects() {
                       <Link
                         href={project.project_url}
                         className="text-text-secondary hover:text-primary transition-smooth"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <svg
                           className="w-5 h-5"
