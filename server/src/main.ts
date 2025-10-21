@@ -44,6 +44,8 @@ async function bootstrap() {
       filter: true,
       showExtensions: true,
       showCommonExtensions: true,
+      tagsSorter: 'alpha',
+      operationsSorter: 'alpha',
     },
     customfavIcon: 'https://avatars.githubusercontent.com/u/6936373?s=200&v=4',
     customJs: [
