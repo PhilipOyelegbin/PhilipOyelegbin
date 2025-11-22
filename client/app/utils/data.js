@@ -217,7 +217,7 @@ export const SkillsData = {
 
 export const ExperienceData = [
   {
-    role: "Tier 2 Customer Support Officer",
+    role: "Level 2 Customer Support Officer",
     company: "GO54 (Whogohost Limited)",
     duration: "2022 - Present",
     skills: ["cPanel/WHM", "CRM", "Wordpress", "JavaScript"],

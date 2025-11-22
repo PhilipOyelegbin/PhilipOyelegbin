@@ -1,20 +1,61 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Skeleton } from "@/app/components/Skeleton";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Testimonial = () => {
   const [loading, setLoading] = useState(true);
   const [testimonials, setTestimonials] = useState();
   const [errorMsg, setErrorMsg] = useState();
 
+  const getAllTestimonials = async () => {
+    try {
+      const resp = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonial`,
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+          },
+        }
+      );
+      if (!resp.ok) {
+        toast.error("Failed to fetch testimonials");
+      }
+      const result = await resp.json();
+      setTestimonials(result.data);
+    } catch (error) {
+      setErrorMsg("Unable to load testimonials, try again later");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const deleteTestimonial = async (id) => {
+    try {
+      const resp = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonial/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+          },
+        }
+      );
+      if (!resp.ok) {
+        toast.error("Failed to delete testimonial");
+      }
+      const result = await resp.json();
+      toast.success("Testimonial deleted successfully");
+    } catch (error) {
+      toast.error("Internal server error, try again later");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonial/approved`)
-      .then((resp) => resp.json())
-      .then((result) => setTestimonials(result.data))
-      .catch((err) =>
-        setErrorMsg("Unable to load testimonials, try again later")
-      )
-      .finally(() => setLoading(false));
+    getAllTestimonials();
   }, [testimonials]);
 
   return (
@@ -40,9 +81,18 @@ const Testimonial = () => {
             testimonials.length > 0 &&
             testimonials.map((testimonial) => (
               <div key={testimonial._id} className="card">
-                <h4 className="font-semibold text-text-primary">
-                  {testimonial.full_name}
-                </h4>
+                <div className="flex justify-between items-center">
+                  <h4 className="font-semibold text-text-primary">
+                    {testimonial.full_name}
+                  </h4>
+
+                  <button
+                    className="items-center bg-rose-500 px-4 py-2 rounded-md text-white"
+                    onClick={() => deleteTestimonial(testimonial._id)}
+                  >
+                    Delete
+                  </button>
+                </div>
                 <div className="flex my-3">
                   {Array(testimonial.rating)
                     .fill(0)
@@ -61,6 +111,15 @@ const Testimonial = () => {
               </div>
             ))}
       </div>
+
+      <ToastContainer
+        position="top-right"
+        className="-z-20"
+        autoClose={2000}
+        closeOnClick
+        pauseOnFocusLoss
+        pauseOnHover
+      />
     </section>
   );
 };

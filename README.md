@@ -59,6 +59,9 @@
     <p>Here are some of my other cloud projects you might want to check out that are not pinned:</p>
     <ul>
         <li>
+            <a href=https://github.com/PhilipOyelegbin/multihost-orchestrator target="_blank" rel="noopener noreferrer">PhilipOyelegbin/multihost-orchestrator</a> (<b>10</b> ✨ and <b>2</b> 🍴): Set up a cPanel-like web hosting server that enables multiple users to host and manage different websites independently, using configuration management tools like Ansible and orchestration tools like Terraform.
+        </li>
+        <li>
             <a href=https://github.com/PhilipOyelegbin/iac-factory target="_blank" rel="noopener noreferrer">PhilipOyelegbin/iac-factory</a> (<b>10</b> ✨ and <b>2</b> 🍴): A production grade Infrastructure as Code (IaC) solution that enables self service provisioning of isolated 3-tier application environments on AWS.
         </li>
         <li>

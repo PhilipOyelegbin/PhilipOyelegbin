@@ -1,7 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs";
-import User from "@/app/(models)/User";
+import * as argon from "argon2";
 
 export const authOptions = {
   // Configure one or more authentication providers
@@ -20,7 +19,7 @@ export const authOptions = {
             throw new Error("No user found with the provided email");
           }
 
-          const isPasswordCorrect = await bcrypt.compare(
+          const isPasswordCorrect = await argon.verify(
             credentials.password,
             user.password
           );
