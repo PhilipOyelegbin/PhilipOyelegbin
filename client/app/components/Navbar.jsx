@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FaCode } from "react-icons/fa";
 
 const menuContent = [
@@ -15,77 +15,95 @@ const menuContent = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const navigate = useRouter();
 
   const handleMenuContent = () => {
     setOpen(!open);
   };
 
+  const handleLogout = () => {
+    sessionStorage.clear();
+    navigate.replace("/host/login");
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border flex items-center justify-between h-16 px-5 md:px-10">
+    <nav className="fixed top-0 left-0 right-0 z-30 bg-background/95 backdrop-blur-sm border-b border-border flex items-center justify-between h-16 px-5 md:px-10">
       {/* Logo */}
-      <div className="flex items-center space-x-2">
+      <Link href="/host/dashboard" className="flex items-center space-x-2">
         <FaCode className="w-8 h-8 text-primary" />
         <span className="text-xl font-bold text-gradient">PhilipOyelegbin</span>
-      </div>
+      </Link>
 
-      {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center space-x-8">
-        {menuContent.map((menu, idx) => (
-          <Link
-            key={idx}
-            className={
-              pathname == menu.link
-                ? "text-primary font-semibold"
-                : "text-text-secondary hover:text-primary transition-smooth"
-            }
-            href={menu.link}
-          >
-            {menu.label}
-          </Link>
-        ))}
-      </div>
-
-      {/* Mobile Menu Button  */}
-      <button
-        className="md:hidden p-2 rounded-lg hover:bg-surface transition-smooth"
-        onClick={handleMenuContent}
-      >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+      {pathname.includes("/host/dashboard") ? (
+        <button
+          type="button"
+          onClick={handleLogout}
+          className="bg-rose-500 text-white py-2 px-4 rounded-md ease-linear duration-300 hover:bg-rose-400 items-center"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
-      </button>
+          Logout
+        </button>
+      ) : (
+        <>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {menuContent.map((menu, idx) => (
+              <Link
+                key={idx}
+                className={
+                  pathname == menu.link
+                    ? "text-primary font-semibold"
+                    : "text-text-secondary hover:text-primary transition-smooth"
+                }
+                href={menu.link}
+              >
+                {menu.label}
+              </Link>
+            ))}
+          </div>
 
-      {/* Mobile naviagtion */}
-      <div
-        className={`${
-          open ? "right-0" : "-right-full"
-        } bg-background nav-container`}
-      >
-        {menuContent.map((menu, idx) => (
-          <Link
-            key={idx}
-            className={
-              pathname == menu.link
-                ? "block text-primary font-semibold"
-                : "block text-text-secondary hover:text-primary transition-smooth"
-            }
-            href={menu.link}
+          {/* Mobile Menu Button  */}
+          <button
+            className="md:hidden p-2 rounded-lg hover:bg-surface transition-smooth"
             onClick={handleMenuContent}
           >
-            {menu.label}
-          </Link>
-        ))}
-      </div>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          {/* Mobile naviagtion */}
+          <div
+            className={`${
+              open ? "right-0" : "-right-full"
+            } bg-background nav-container`}
+          >
+            {menuContent.map((menu, idx) => (
+              <Link
+                key={idx}
+                className={
+                  pathname == menu.link
+                    ? "block text-primary font-semibold"
+                    : "block text-text-secondary hover:text-primary transition-smooth"
+                }
+                href={menu.link}
+                onClick={handleMenuContent}
+              >
+                {menu.label}
+              </Link>
+            ))}
+          </div>
+        </>
+      )}
     </nav>
   );
 };

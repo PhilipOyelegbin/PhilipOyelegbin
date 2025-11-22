@@ -1,24 +1,24 @@
 export const metadata = {
-  metadataBase: new URL(process.env.HOST_URI),
-  title: "Admin: Philip Oyelegbin - Full Stack and Cloud Engineer",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_HOST_URI),
+  title: "Dashboard: Philip Oyelegbin - Full Stack and Cloud/DevOps Engineer",
   description:
-    "Result-Driven Support Specialist | Frontend Developer | Backend Developer | Cloud Engineer.",
-  favicon: "/favicon.ico",
+    "Experienced Support Specialist | Backend Developer | Cloud & DevOps Engineer",
+  favicon: "./favicon.ico",
   type: "website",
   openGraph: {
-    title: "Admin: Philip Oyelegbin - Full Stack and Cloud Engineer",
+    title: "Dashboard: Philip Oyelegbin - Full Stack and Cloud/DevOps Engineer",
     description:
-      "Result-Driven Support Specialist | Frontend Developer | Backend Develper | Cloud Engineer.",
+      "Experienced Support Specialist | Backend Developer | Cloud & DevOps Engineer",
     url: process.env.HOST_URI,
     type: "website",
     locale: "en_US",
-    images: "/opengraph-image.png",
+    images: "./opengraph-image.png",
     site_name: "Philip Oyelegbin",
   },
   twitter: {
     handle: "@OyelegbinPhilip",
     site: "@OyelegbinPhilip",
-    images: "/opengraph-image.png",
+    images: "./opengraph-image.png",
     cardType: "summary_large_image",
   },
   robots: {
@@ -35,9 +35,9 @@ export const metadata = {
     },
   },
   icons: {
-    icon: "/apple-touch-icon.png",
+    icon: "./apple-touch-icon.png",
     shortcut: "/shortcut-icon.png",
-    apple: "/apple-touch-icon.png",
+    apple: "./apple-touch-icon.png",
     other: {
       rel: "apple-touch-icon-precomposed",
       url: "/apple-touch-icon-precomposed.png",
@@ -45,9 +45,9 @@ export const metadata = {
   },
 };
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
-export default function AdminLayout({ children }) {
+export default function DashboardLayout({ children }) {
   return (
     <>
       <main>{children}</main>

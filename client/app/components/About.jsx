@@ -101,7 +101,7 @@ const About = () => {
       <div className="py-10 px-5 md:px-10 bg-gradient-to-r from-primary to-primary-700 mx-auto text-center text-white">
         <h2 className="text-3xl font-bold mb-6">Get To Learn More About Me!</h2>
         <p className="text-xl text-primary-100 mb-8 leading-relaxed">
-          From curious beginner to seasoned professional—every step has been a
+          From curious beginner to seasoned professional every step has been a
           learning opportunity that shaped my approach to technology and
           problem-solving.
         </p>

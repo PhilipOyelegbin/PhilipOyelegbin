@@ -3,6 +3,8 @@ import { Skeleton } from "@/app/components/Skeleton";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Projects() {
   const [loading, setLoading] = useState(false);
@@ -21,43 +23,30 @@ function Projects() {
       const result = await resp.json();
       setProjectData(result.data);
     } catch (error) {
-      setErrorMsg("Unable to load all projects, try again later");
+      setErrorMsg("Unable to load projects, try again later");
     } finally {
       setLoading(false);
     }
   };
 
-  const getWebProjects = async () => {
+  const deleteProject = async (id) => {
     try {
       const resp = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/project/web`
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/project/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+          },
+        }
       );
       if (!resp.ok) {
-        setErrorMsg("Failed to fetch web projects");
+        toast.error("Failed to delete project");
       }
-
       const result = await resp.json();
-      setProjectData(result.data);
+      toast.success("Project deleted successfully");
     } catch (error) {
-      setErrorMsg("Unable to load web projects, try again later");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const getCloudProjects = async () => {
-    try {
-      const resp = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/project/cloud`
-      );
-      if (!resp.ok) {
-        setErrorMsg("Failed to fetch cloud projects");
-      }
-
-      const result = await resp.json();
-      setProjectData(result.data);
-    } catch (error) {
-      setErrorMsg("Unable to load cloud projects, try again later");
+      toast.error("Internal server error, try again later");
     } finally {
       setLoading(false);
     }
@@ -65,77 +54,10 @@ function Projects() {
 
   useEffect(() => {
     getAllProjects();
-  }, []);
+  }, [projectData]);
 
   return (
     <>
-      {/* <!-- Project Filters --> */}
-      <section className="py-10 px-5 md:px-10 bg-surface">
-        {/* <!-- Filter Buttons --> */}
-        <div className="flex flex-wrap md:justify-center gap-3 font-semibold mb-12">
-          <button
-            className="flex items-center bg-primary px-4 py-2 rounded-md text-white active"
-            data-filter="all"
-            onClick={() => getAllProjects()}
-          >
-            <svg
-              className="w-4 h-4 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-              />
-            </svg>
-            All Projects
-          </button>
-          <button
-            className="flex items-center px-4 py-2 border border-slate-300 rounded-md text-text-primary hover:bg-slate-100 transition-all ease-linear duration-300"
-            data-filter="web"
-            onClick={() => getWebProjects()}
-          >
-            <svg
-              className="w-4 h-4 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-              />
-            </svg>
-            Web Development
-          </button>
-          <button
-            className="flex items-center px-4 py-2 border border-slate-300 rounded-md text-text-primary hover:bg-slate-100 transition-all ease-linear duration-300"
-            data-filter="cloud"
-            onClick={() => getCloudProjects()}
-          >
-            <svg
-              className="w-4 h-4 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
-              />
-            </svg>
-            Cloud & DevOps
-          </button>
-        </div>
-      </section>
-
       {/* <!-- Featured Projects --> */}
       <section className="py-10 px-5 md:px-10 bg-white">
         <div className="text-center mb-16">
@@ -148,9 +70,7 @@ function Projects() {
           </p>
         </div>
 
-        {errorMsg && (
-          <p className="text-2xl text-center text-rose-500">{errorMsg}</p>
-        )}
+        {errorMsg && <p className="text-center text-error">{errorMsg}</p>}
 
         {/* <!-- Project Grid --> */}
         <div
@@ -232,10 +152,35 @@ function Projects() {
                     <p className="text-text-secondary leading-relaxed">
                       {project.description}
                     </p>
+
+                    {/* <!-- Acion Button --> */}
+                    <div className="flex flex-wrap gap-2">
+                      <Link
+                        href={`/host/dashboard/update/project/${project._id}`}
+                        className="items-center bg-primary-100 text-primary px-4 py-2 rounded-md"
+                      >
+                        Edit
+                      </Link>
+                      <button
+                        className="items-center bg-rose-500 px-4 py-2 rounded-md text-white"
+                        onClick={() => deleteProject(project._id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
         </div>
+
+        <ToastContainer
+          position="top-right"
+          className="-z-20"
+          autoClose={2000}
+          closeOnClick
+          pauseOnFocusLoss
+          pauseOnHover
+        />
       </section>
     </>
   );
