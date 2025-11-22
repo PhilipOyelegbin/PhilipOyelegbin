@@ -34,10 +34,11 @@ const Login = () => {
             "Content-Type": "application/json",
           },
         }
-      ).then((res) => res.json());
+      ).then(async (res) => await res.json());
 
       if (res.error) {
-        toast.error(res.error);
+        console.log(res);
+        toast.error(res.message);
       } else {
         reset();
         sessionStorage.setItem("token", res.data);
