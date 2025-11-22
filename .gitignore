@@ -3,3 +3,4 @@
 /.next/
 /out/
 /dist
+/client/package-lock.json

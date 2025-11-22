@@ -8,13 +8,10 @@ async function bootstrap() {
     rawBody: true,
     bodyParser: true,
     cors: {
-      origin: [
-        'http://localhost:3000',
-        'http://localhost:5173',
-        'http://localhost:3030',
-        'https://philipoyelegbin.com.ng',
-      ],
-      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+      origin: ['http://localhost:3000', 'https://philipoyelegbin.com.ng'],
+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+      allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+      // credentials: true, // optional — needed only if using cookies/auth headers
       preflightContinue: false,
       optionsSuccessStatus: 204,
     },
