@@ -28,7 +28,7 @@ jobs:
       - name: Install Dependencies
         run: |
           cd client
-          npm ci | npm i
+          npm i | npm ci
 
       - name: Build the Application
         run: |
