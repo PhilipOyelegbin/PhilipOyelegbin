@@ -37,7 +37,6 @@ const Login = () => {
       ).then(async (res) => await res.json());
 
       if (res.error) {
-        console.log(res);
         toast.error(res.message);
       } else {
         reset();
