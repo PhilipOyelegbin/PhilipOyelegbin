@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { ValidationPipe } from '@nestjs/common';
+import { ValidationPipe, VersioningType } from '@nestjs/common';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -17,7 +17,11 @@ async function bootstrap() {
     },
   });
 
-  app.setGlobalPrefix('/api/v1');
+  app.setGlobalPrefix('/api');
+  app.enableVersioning({
+    type: VersioningType.URI,
+    defaultVersion: '1',
+  });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
   // setting up swagger ui documentation
@@ -28,6 +32,14 @@ async function bootstrap() {
     )
     .setVersion('1.0')
     .addBearerAuth()
+    .setContact(
+      'Philip Oyelegbin',
+      'https://philipoyelegbin.com.ng',
+      'info@philipoyelegbin.com.ng',
+    )
+    .addServer(`http://localhost:${process.env.PORT || 3001}`, 'Local')
+    .addServer('https://api-philipoyelegbin.vercel.app', 'Staging')
+    .addServer('https://api.philipoyelegbin.com.ng', 'Production')
     .build();
 
   const document = SwaggerModule.createDocument(app, config, {
@@ -57,6 +69,6 @@ async function bootstrap() {
   });
 
   await app.listen(process.env.PORT ?? 3001);
-  console.log(`Application is running...`);
+  console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();

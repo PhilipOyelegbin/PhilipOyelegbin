@@ -29,6 +29,7 @@ import {
   ApiBadRequestResponse,
   ApiBearerAuth,
   ApiBody,
+  ApiConsumes,
   ApiCreatedResponse,
   ApiInternalServerErrorResponse,
   ApiNoContentResponse,
@@ -51,6 +52,7 @@ export class ProjectController {
     summary: 'add a new project',
     description: 'Add a new project',
   })
+  @ApiConsumes('multipart/form-data')
   @ApiCreatedResponse({ description: 'Created' })
   @Post()
   @UseGuards(JwtGuard)
@@ -114,6 +116,7 @@ export class ProjectController {
     summary: 'update a project image',
     description: 'Update a project image',
   })
+  @ApiConsumes('multipart/form-data')
   @ApiBody({
     description: 'The fields to update in the project.',
     schema: {
