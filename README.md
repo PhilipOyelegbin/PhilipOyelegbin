@@ -1,3 +1,5 @@
+![banner](./banner.png)
+
 <div align="center">
     <p>
         <a href="https://philipoyelegbin.com.ng">
@@ -11,7 +13,7 @@
         </a>
         <img src="https://komarev.com/ghpvc/?username=PhilipOyelegbin&amp;style=for-the-badge" alt="Profile Views Count Badge"/>
     </p>
-    <p>Hi there 👋🏾! I am a Backend Developer, and DevOps Engineer highly skilled and versatile professional with expertise in application development, and deployment of applications/infrastructure to the cloud. Currently working as a Level 2 Customer Support for a web hosting company, utilizing technical knowledge to provide top-notch support and resolve complex hosting and infrastructure issues.</p>
+    <p>Hi there 👋🏾! I am a Full Stack, and Cloud Engineer highly skilled and versatile professional with expertise in application development, and deployment of applications/infrastructure to the cloud. Currently working as a Level 2 Web Hosting Support Specialist, utilizing technical knowledge to provide top-notch support and resolve complex hosting and infrastructure issues.</p>
     <p align="left">Here is a professional summary highlighting the personality traits:</p>
     <ul align="left">
         <li>Goal-oriented problem solver with a visionary approach.</li>
@@ -68,7 +70,7 @@
             <a href=https://github.com/PhilipOyelegbin/automated-flaskapp-deployment target="_blank" rel="noopener noreferrer">PhilipOyelegbin/automated-flaskapp-deployment</a> (<b>10</b> ✨ and <b>5</b> 🍴): This project illustrates the automation of essential processes: building, testing, and deploying code. It demonstrates my understanding of both the "what" and "why" of CI/CD, not just the "how."
         </li>
         <li>
-            <a href=https://github.com/PhilipOyelegbin/multihost-orchestrator target="_blank" rel="noopener noreferrer">PhilipOyelegbin/multihost-orchestrator</a> (<b>2</b> ✨ and <b>1</b> 🍴): Set up a cPanel-like web hosting server that enables multiple users to host and manage different websites independently, manually or using configuration management tools like Ansible and orchestration tools.
+            <a href=https://github.com/PhilipOyelegbin/cloud-native-guestbook target="_blank" rel="noopener noreferrer">PhilipOyelegbin/cloud-native-guestbook</a> (<b>2</b> ✨ and <b>1</b> 🍴): This is a Multi-Tier Web Application Deployment. It involves deploying a frontend web application that interacts with a backend database, requiring you to manage state, networking, and configuration within a local kubernetes cluster.
         </li>
         <li>More coming soon 😇.</li>
     </ul>

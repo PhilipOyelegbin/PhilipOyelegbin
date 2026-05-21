@@ -26,11 +26,11 @@ const About = () => {
               <div className="relative">
                 <div className="aspect-square w-full max-w-md mx-auto lg:mx-0 rounded-3xl overflow-hidden shadow-card">
                   <Image
-                    src="/profile.png"
+                    src={`${`/profile.png` || `/profile2.png`}`}
                     width={100}
                     height={100}
                     alt="Philip Oyelegbin - Professional Portrait"
-                    className="w-full h-full object-cover"
+                    className="w-full aspect-square object-cover object-top rounded-3xl transition-transform duration-300 hover:scale-105"
                   />
                 </div>
 

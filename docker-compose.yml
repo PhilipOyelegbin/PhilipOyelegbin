@@ -6,7 +6,6 @@ services:
     environment:
       NEXT_PUBLIC_API_BASE_URL: api
       NEXT_PUBLIC_HOST_URI: web
-      NEXT_PUBLIC_CV_URL: https://drive.google.com/file/d/1RpymYdDKc52VJ79nfipSkYdzaa_1ISn0/view?usp=sharing
     depends_on:
       - api
 
@@ -15,16 +14,6 @@ services:
     environment:
       - PORT=3030
       - DATABASE_URL="mongodb+srv://philip:Mogdb@D0c.@db/portfolio"
-      - SEED_ADMIN_EMAIL=philipoyelegbin@gmail.com
-      - SEED_ADMIN_PASSWORD="P#ilip."
-      - JWT_SECRET_KEY=XmFWtHSwNj6P1kaicrg9qFE07uq1vZAH
-      - JWT_EXPIRATION_TIME=1h
-      - BUCKET_PRIVATE_ENDPOINT=https://81c852930641402981b6a613c8239927.r2.cloudflarestorage.com
-      - BUCKET_ACCESS_KEY=6e30f43a6e34bb6db106299fc0480d7e
-      - BUCKET_SECRET_KEY=10a8031746a72d72b8e587ea0eefa97743b8d77678b29817aacc57fdbe427c2d
-      - BUCKET_REGION=eu-north-1
-      - BUCKET_NAME=portfolio-buk
-      - BUCKET_PUBLIC_ENDPOINT=https://pub-d19978e6d5e748769e08155aec001b8b.r2.dev
     depends_on:
       - db
 
