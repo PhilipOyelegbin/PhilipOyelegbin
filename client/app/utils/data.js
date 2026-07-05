@@ -1,17 +1,18 @@
 import { FaCloud, FaAws, FaServer, FaReact, FaLinux } from "react-icons/fa";
+import { GiShipWheel } from "react-icons/gi";
 
 export const EducationData = [
   {
-    certificate: "Cloud Engineer",
+    certificate: "Cloud Engineering",
     institution: "AltSchool Africa",
-    duration: "2025 - Present",
+    duration: "2025 - 2026",
     summary: "",
-    skills: ["JavaScript", "GCP", "Ansible", "Terraform"],
+    skills: ["Cloud Services", "IaC", "CI/CD", "Containerization"],
     flex: "",
     pad: "md:pr-8",
   },
   {
-    certificate: "AWS Cloud Practitioner",
+    certificate: "AWS re/Start",
     institution: "AWS & CIL Academy",
     summary:
       "Automated Scripting with Bash, VPC Network Setup, Network Troubleshooting, Securing Cloud Services, Provision AWS service using CloudFomation, Tracking activity using CloudTail, etc.",
@@ -220,41 +221,49 @@ export const ExperienceData = [
     role: "Level 2 Customer Support Officer",
     company: "GO54 (Whogohost Limited)",
     duration: "2022 - Present",
-    skills: ["cPanel/WHM", "CRM", "Wordpress", "JavaScript"],
+    skills: ["cPanel/WHM", "WHMCS", "Wordpress", "JavaScript"],
     flex: "",
     pad: "md:pr-8",
+  },
+  {
+    role: "Backend & Cloud Engineer",
+    company: "Nobzo",
+    duration: "2026",
+    skills: ["Express", "AWS", "GitHub Actions", "Terraform"],
+    flex: "md:flex-row-reverse",
+    pad: "md:pl-8",
   },
   {
     role: "Lead DevOps Engineer",
     company: "3MTT-HealthPointer",
     duration: "2025",
     skills: ["JavaScript", "GitHub", "CI/CD", "AWS"],
-    flex: "md:flex-row-reverse",
-    pad: "md:pl-8",
-  },
-  {
-    role: "Backend Engineer",
-    company: "ReCreaX",
-    duration: "2024 - 2025",
-    skills: ["Typescript", "Nest", "PostgreSQL", "AWS"],
     flex: "",
     pad: "md:pr-8",
+  },
+  {
+    role: "Backend & DevOps Engineer",
+    company: "ReCreaX",
+    duration: "2024 - 2025",
+    skills: ["Nest", "PostgreSQL", "AWS", "GitHub Actions"],
+    flex: "md:flex-row-reverse",
+    pad: "md:pl-8",
   },
   {
     role: "Frontend Engineer",
     company: "Valorise Limited",
     duration: "2022 - 2023",
     skills: ["HTML", "SCSS", "React", "Git"],
-    flex: "md:flex-row-reverse",
-    pad: "md:pl-8",
+    flex: "",
+    pad: "md:pr-8",
   },
   {
     role: "Senior Robotics Instructor",
     company: "WiFi Combat Academy",
     duration: "2021 - 2023",
     skills: ["Figma", "MIT App Inventor", "Arduino", "Roblox"],
-    flex: "",
-    pad: "md:pr-8",
+    flex: "md:flex-row-reverse",
+    pad: "md:pl-8",
   },
 ];
 
@@ -283,6 +292,11 @@ export const Services = [
 ];
 
 export const Certificates = [
+  {
+    icon: <GiShipWheel className="w-8 h-8 text-accent" />,
+    name: "Kubernetes and Cloud Native Associate",
+    level: "Associate Level",
+  },
   {
     icon: <FaCloud className="w-8 h-8 text-accent" />,
     name: "AWS Cloud Practitioner",
