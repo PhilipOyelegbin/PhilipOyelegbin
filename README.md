@@ -2,7 +2,7 @@
 
 <div align="center">
     <p>
-        <a href="https://philipoyelegbin.com.ng">
+        <a href="https://philip.oyelegbin.name.ng">
             <img src="https://img.shields.io/badge/-Website-3B7EBF?style=for-the-badge&amp;logo=amp&amp;logoColor=white" alt="Website Badge">
         </a>
         <a href="https://linkedin.com/in/philipoyelegbin">
