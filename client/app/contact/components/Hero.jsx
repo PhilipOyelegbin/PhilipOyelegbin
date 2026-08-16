@@ -70,7 +70,7 @@ function Hero() {
               <span>WhatsApp Chat</span>
             </Link>
             <Link
-              href="mailto:info@philipoyelegbin.com.ng"
+              href="mailto:philip@oyelegbin.name.ng"
               className="btn-secondary flex items-center space-x-2 w-full sm:w-auto justify-center"
               target="_blank"
               rel="noopener noreferrer"
@@ -110,7 +110,7 @@ function Hero() {
             </svg>
             <span>
               Typical response time:{" "}
-              <strong className="text-primary">Within 2 hours</strong>
+              <strong className="text-primary">Within 30 minutes</strong>
             </span>
           </div>
         </div>

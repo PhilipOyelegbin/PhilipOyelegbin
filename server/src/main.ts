@@ -8,7 +8,11 @@ async function bootstrap() {
     rawBody: true,
     bodyParser: true,
     cors: {
-      origin: ['http://localhost:3000', 'https://philipoyelegbin.com.ng'],
+      origin: [
+        'http://localhost:3000',
+        'https://philip.oyelegbin.name.ng',
+        'https://www.philip.oyelegbin.name.ng',
+      ],
       methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
       allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
       // credentials: true, // optional — needed only if using cookies/auth headers
@@ -34,12 +38,12 @@ async function bootstrap() {
     .addBearerAuth()
     .setContact(
       'Philip Oyelegbin',
-      'https://philipoyelegbin.com.ng',
-      'info@philipoyelegbin.com.ng',
+      'https://philip.oyelegbin.name.ng',
+      'philip@oyelegbin.name.ng',
     )
     .addServer(`http://localhost:${process.env.PORT || 3001}`, 'Local')
     .addServer('https://api-philipoyelegbin.vercel.app', 'Staging')
-    .addServer('https://api.philipoyelegbin.com.ng', 'Production')
+    .addServer('https://api.philip.oyelegbin.name.ng', 'Production')
     .build();
 
   const document = SwaggerModule.createDocument(app, config, {

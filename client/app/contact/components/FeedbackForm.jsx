@@ -40,7 +40,7 @@ const FeedbackForm = () => {
           headers: {
             "Content-Type": "application/json",
           },
-        }
+        },
       );
 
       if (response.ok) {
@@ -218,12 +218,12 @@ const FeedbackForm = () => {
                   <div>
                     <p className="font-semibold text-text-primary">Email</p>
                     <Link
-                      href="mailto:info@philipoyelegbin.com.ng"
+                      href="mailto:philip@oyelegbin.name.ng"
                       className="text-primary hover:text-primary-700 transition-smooth"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      info@philipoyelegbin.com.ng
+                      philip@oyelegbin.name.ng
                     </Link>
                   </div>
                 </div>
