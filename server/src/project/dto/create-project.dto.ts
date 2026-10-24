@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsArray, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { Multer } from 'multer';
 
 export class CreateProjectDto {
@@ -34,6 +34,13 @@ export class CreateProjectDto {
   @IsString()
   @IsNotEmpty()
   tag: string;
+
+  @ApiProperty({
+    description: 'The tools used in the project',
+    example: ['NestJS', 'MongoDB', 'TypeScript'],
+  })
+  @IsArray()
+  tools: string[];
 
   @ApiProperty({
     description: 'The project link of the project',

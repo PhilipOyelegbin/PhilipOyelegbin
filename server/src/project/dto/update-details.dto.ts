@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { IsOptional, IsString } from 'class-validator';
+import { IsArray, IsOptional, IsString } from 'class-validator';
 
 export class UpdateProjectDetailsDto {
   @ApiPropertyOptional({
@@ -25,6 +25,13 @@ export class UpdateProjectDetailsDto {
   @IsString()
   @IsOptional()
   tag: string;
+
+  @ApiPropertyOptional({
+    description: 'The tools used in the project',
+    example: ['NestJS', 'MongoDB', 'TypeScript'],
+  })
+  @IsArray()
+  tools: string[];
 
   @ApiPropertyOptional({
     description: 'The project link of the project',

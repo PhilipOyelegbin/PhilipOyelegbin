@@ -17,6 +17,9 @@ export class Project {
   @Prop({ required: true })
   tag: string;
 
+  @Prop({ required: true })
+  tools: string[];
+
   @Prop()
   project_url: string;
 
