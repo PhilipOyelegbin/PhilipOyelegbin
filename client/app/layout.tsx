@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/features/Header";
+import Footer from "./components/features/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const montserrat = Montserrat({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -37,24 +37,29 @@ export const metadata: Metadata = {
     "PHP Developer",
     "Laravel Developer",
   ],
-  favicon: "./favicon.ico",
-  type: "website",
+  authors: [
+    { name: "Philip Oyelegbin", url: "https://philip.oyelegbin.name.ng" },
+  ],
   openGraph: {
     title:
       "Philip Oyelegbin - L2/L3 Technical Support, Software Engineer | Full-Stack JavaScript, DevOps & Cloud Technologies",
     description:
       "Experienced Support Specialist | Full-Stack Developer | Cloud & DevOps Engineer",
-    url: process.env.HOST_URI,
+    url: process.env.NEXT_PUBLIC_HOST_URI,
     type: "website",
     locale: "en_US",
     images: "./opengraph-image.png",
-    site_name: "Philip Oyelegbin",
+    siteName: "Philip Oyelegbin",
   },
   twitter: {
-    handle: "@OyelegbinPhilip",
+    title:
+      "Philip Oyelegbin - L2/L3 Technical Support, Software Engineer | Full-Stack JavaScript, DevOps & Cloud Technologies",
+    description:
+      "Experienced Support Specialist | Full-Stack Developer | Cloud & DevOps Engineer",
     site: "@OyelegbinPhilip",
-    images: "./opengraph-image.png",
-    cardType: "summary_large_image",
+    images: [`${process.env.NEXT_PUBLIC_HOST_URI}/opengraph-image.png`],
+    card: "summary_large_image",
+    creator: "@OyelegbinPhilip",
   },
   robots: {
     index: false,
@@ -75,7 +80,7 @@ export const metadata: Metadata = {
     apple: "./apple-touch-icon.png",
     other: {
       rel: "apple-touch-icon-precomposed",
-      url: "/apple-touch-icon-precomposed.png",
+      url: "./apple-touch-icon.png",
     },
   },
 };
@@ -84,7 +89,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${montserrat.className} ${poppins.className} h-full antialiased`}
     >
       <body className="bg-[#0a0a0c] text-[#f1f0f5] selection:bg-[#7c3aed] selection:text-[#f5f0ff] antialiased min-h-screen flex flex-col font-sans">
         <Toaster position="top-right" />

@@ -1,10 +1,10 @@
-import Certifications from "./components/Certifications";
-import Contact from "./components/Contact";
-import Experience from "./components/Experience";
-import Hero from "./components/Hero";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import Testimonials from "./components/Testimonials";
+import Certifications from "./components/features/Certifications";
+import Contact from "./components/features/Contact";
+import Experience from "./components/features/Experience";
+import Hero from "./components/features/Hero";
+import Projects from "./components/features/Projects";
+import Skills from "./components/features/Skills";
+import Testimonials from "./components/features/Testimonials";
 
 export default function Home() {
   return (

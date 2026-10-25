@@ -1,15 +1,16 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { IsArray, IsNotEmpty, IsOptional, IsString } from 'class-validator';
-import { Multer } from 'multer';
+// import { Multer } from 'multer';
 
 export class CreateProjectDto {
-  @ApiProperty({
-    description: 'The cover image of the project uploaded as a file',
-    type: 'string',
-    format: 'binary',
-    example: 'blogpreview.png',
-  })
-  cover_image: Multer.File;
+  // @ApiProperty({
+  //   description: 'The cover image of the project uploaded as a file',
+  //   type: 'string',
+  //   format: 'binary',
+  //   example: 'blogpreview.png',
+  // })
+  // @IsNotEmpty()
+  // cover_image: Multer.File;
 
   @ApiProperty({
     description: 'The title of the project',
@@ -40,6 +41,8 @@ export class CreateProjectDto {
     example: ['NestJS', 'MongoDB', 'TypeScript'],
   })
   @IsArray()
+  @IsString({ each: true })
+  @IsNotEmpty()
   tools: string[];
 
   @ApiProperty({

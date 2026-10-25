@@ -5,81 +5,22 @@ import {
   Cpu,
   FileText,
   Layers,
+  MessageCircle,
   Network,
-  RefreshCw,
   Server,
   Share2,
   Terminal,
-  Zap,
 } from "lucide-react";
 
 export const directEmail = "philip@oyelegbin.name.ng";
 
-export const PROJECTS = [
-  {
-    id: "project-1",
-    category: ["devops", "sre"],
-    title: "Autonomous Cluster Orchestrator",
-    codeTag: "PROJECT_01 // ORCHESTRATION",
-    sla: "99.99% Uptime SLA",
-    description:
-      "Automated multi-region AWS EKS provisioning engine with GitOps synchronization, zero-downtime blue/green rollouts, and self-healing node clusters.",
-    flowIcon: RefreshCw,
-    flowText: "GH Actions → Harbor → ArgoCD → EKS Edge",
-    buildMetric: "1m 14s build",
-    image:
-      "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?q=80&w=800&auto=format&fit=crop",
-    tags: ["Kubernetes", "AWS EKS", "Terraform", "ArgoCD"],
-    highlightColor: "primary",
-  },
-  {
-    id: "project-2",
-    category: ["fullstack", "devops"],
-    title: "High-Throughput Edge API Gateway",
-    codeTag: "PROJECT_02 // LOW-LATENCY",
-    sla: "-45% Deploy Latency",
-    description:
-      "Global API edge distribution mesh handling dynamic routing, token authentication in under 4ms, and tiered multi-level caching for rapid content propagation.",
-    flowIcon: Zap,
-    flowText: "Cloudflare Edge → Envoy Proxy → Redis Cache → Go Core",
-    buildMetric: "98.4% Hit Rate",
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop",
-    tags: ["Go", "Envoy Proxy", "Redis", "Cloudflare"],
-    highlightColor: "secondary",
-  },
-  {
-    id: "project-3",
-    category: ["sre", "devops"],
-    title: "Enterprise Incident Mitigation Platform",
-    codeTag: "PROJECT_03 // INCIDENT RESPONSE",
-    sla: "350M+ Req/Day",
-    description:
-      "Real-time enterprise hosting observability stack with automated remediation bots, adaptive worker thread balancing, and instant failover execution under peak stress.",
-    flowIcon: Activity,
-    flowText: "Prometheus → Alertmanager → Ansible Remediation → Healing",
-    buildMetric: "SLA: 99.98%",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
-    tags: ["Python", "Ansible", "Prometheus", "Grafana"],
-    highlightColor: "primary",
-  },
-  {
-    id: "project-4",
-    category: ["fullstack"],
-    title: "Distributed Event-Driven Ledger",
-    codeTag: "PROJECT_04 // DATA RESILIENCE",
-    sla: "Zero-Downtime Migration",
-    description:
-      "High-concurrency financial event ledger with WebSocket real-time updates, strict ACID write consistency via WAL streaming, and zero data loss multi-AZ replication.",
-    flowIcon: Layers,
-    flowText: "React 19 → Node.js API → Kafka Topics → PostgreSQL Primary",
-    buildMetric: "0.42ms Latency",
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
-    tags: ["React 19", "Node.js", "Kafka", "PostgreSQL"],
-    highlightColor: "secondary",
-  },
+export const NAV_LINKS = [
+  { label: "Overview", href: "#overview" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
+  { label: "Testimonials", href: "#testimonials" },
 ];
 
 export const SKILLS = [
@@ -207,38 +148,11 @@ export const EXPERIENCE = [
 
 export const CERTIFICATIONS = [
   {
-    id: "cert-1",
-    icon: Code,
-    title: "Meta Frontend Developer",
-    issuer: "Coursera",
-    tags: ["HTML", "CSS", "JavaScript", "React", "Redux"],
-    certId: "AWS-PSA-94810",
-    theme: "primary",
-  },
-  {
-    id: "cert-2",
-    icon: Server,
-    title: "cPanel & WHM Proficiency",
-    issuer: "cPanel University",
-    tags: ["Web Hosting", "Server Management", "DNS", "Email"],
-    certId: "CKA-249018",
-    theme: "secondary",
-  },
-  {
-    id: "cert-3",
-    icon: Cpu,
-    title: "Introduction To Linux (LFS101)",
-    issuer: "Linux Foundation",
-    tags: ["Linux Basics", "Command Line", "File System", "Permissions"],
-    certId: "HCTA-00389",
-    theme: "primary",
-  },
-  {
-    id: "cert-4",
-    icon: Cloud,
-    title: "AWS reStart Graduate",
-    issuer: "CIL Academy",
-    tags: ["AWS Cloud", "Cloud Computing", "DevOps", "Linux"],
+    id: "cert-6",
+    icon: Layers,
+    title: "Kubernetes and Cloud Native Associate (KCNA)",
+    issuer: "Cloud Native Computing Foundation",
+    tags: ["Kubernetes", "Cloud Native", "Containers", "DevOps"],
     certId: "RHCE-88314",
     theme: "secondary",
   },
@@ -252,39 +166,72 @@ export const CERTIFICATIONS = [
     theme: "primary",
   },
   {
-    id: "cert-6",
-    icon: Layers,
-    title: "Kubernetes and Cloud Native Associate (KCNA)",
-    issuer: "Cloud Native Computing Foundation",
-    tags: ["Kubernetes", "Cloud Native", "Containers", "DevOps"],
+    id: "cert-4",
+    icon: Cloud,
+    title: "AWS reStart Graduate",
+    issuer: "CIL Academy",
+    tags: ["AWS Cloud", "Cloud Computing", "DevOps", "Linux"],
     certId: "RHCE-88314",
     theme: "secondary",
+  },
+  {
+    id: "cert-3",
+    icon: Cpu,
+    title: "Introduction To Linux (LFS101)",
+    issuer: "Linux Foundation",
+    tags: ["Linux Basics", "Command Line", "File System", "Permissions"],
+    certId: "HCTA-00389",
+    theme: "primary",
+  },
+  {
+    id: "cert-2",
+    icon: Server,
+    title: "cPanel & WHM Proficiency",
+    issuer: "cPanel University",
+    tags: ["Web Hosting", "Server Management", "DNS", "Email"],
+    certId: "CKA-249018",
+    theme: "secondary",
+  },
+  {
+    id: "cert-1",
+    icon: Code,
+    title: "Meta Frontend Developer",
+    issuer: "Coursera",
+    tags: ["HTML", "CSS", "JavaScript", "React", "Redux"],
+    certId: "AWS-PSA-94810",
+    theme: "primary",
   },
 ];
 
 export const CONTACT_METHODS = [
   {
+    name: "Whatsapp",
+    icon: MessageCircle,
+    url: "https://wa.me/2348034567890",
+    theme: "primary",
+  },
+  {
     name: "GitHub",
     icon: Code,
     url: "https://github.com/philipoyelegbin",
-    theme: "primary",
+    theme: "secondary",
   },
   {
     name: "LinkedIn",
     icon: Network,
     url: "https://linkedin.com/in/philipoyelegbin",
-    theme: "secondary",
+    theme: "primary",
   },
   {
     name: "Twitter/X",
     icon: Share2,
     url: "https://x.com/oyelegbinphilip",
-    theme: "primary",
+    theme: "secondary",
   },
   {
     name: "Medium",
     icon: FileText,
-    url: "https://medium.com/philipoyelegbin",
-    theme: "secondary",
+    url: "https://medium.com/@philipoyelegbin",
+    theme: "primary",
   },
 ];

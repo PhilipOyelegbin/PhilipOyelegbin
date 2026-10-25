@@ -17,14 +17,14 @@ export class Project {
   @Prop({ required: true })
   tag: string;
 
-  @Prop({ required: true })
+  @Prop({ type: [String], required: true })
   tools: string[];
 
   @Prop()
-  project_url: string;
+  project_url?: string;
 
   @Prop()
-  github_url: string;
+  github_url?: string;
 }
 
 export const ProjectSchema = SchemaFactory.createForClass(Project);
