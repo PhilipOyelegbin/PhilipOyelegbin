@@ -207,7 +207,7 @@ export const CONTACT_METHODS = [
   {
     name: "Whatsapp",
     icon: MessageCircle,
-    url: "https://wa.me/2348034567890",
+    url: "https://wa.me/2348054945601",
     theme: "primary",
   },
   {
