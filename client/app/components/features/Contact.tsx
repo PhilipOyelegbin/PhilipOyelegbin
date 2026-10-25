@@ -82,7 +82,9 @@ function Contact() {
       }
     } catch (error) {
       toast.error(
-        error || error?.message || "An error occurred while sending feedback.",
+        error instanceof Error
+          ? error.message
+          : "An error occurred while sending feedback.",
       );
     }
   };

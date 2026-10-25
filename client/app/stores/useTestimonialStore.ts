@@ -35,7 +35,9 @@ export const useTestimonialStore = create<TestimonialState>((set) => ({
       set({
         isLoading: false,
         error:
-          error?.message || "Unable to load all testimonials, try again later",
+          error instanceof Error
+            ? error.message
+            : "Unable to load all testimonials, try again later",
       });
       throw new Error("Unable to load all testimonials, try again later");
     }

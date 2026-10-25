@@ -45,7 +45,10 @@ export const usePortfolioStore = create<PortfolioState>((set) => ({
       console.error("Error fetching projects:", error);
       set({
         isLoading: false,
-        error: error?.message || "Unable to load all projects, try again later",
+        error:
+          error instanceof Error
+            ? error.message
+            : "Unable to load all projects, try again later",
       });
       throw new Error("Unable to load all projects, try again later");
     }
